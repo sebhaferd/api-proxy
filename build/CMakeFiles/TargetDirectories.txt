@@ -1,0 +1,3 @@
+/Users/sebihaferd/Projects/api-proxy/build/CMakeFiles/proxy.dir
+/Users/sebihaferd/Projects/api-proxy/build/CMakeFiles/edit_cache.dir
+/Users/sebihaferd/Projects/api-proxy/build/CMakeFiles/rebuild_cache.dir
