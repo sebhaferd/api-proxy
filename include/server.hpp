@@ -1,3 +1,5 @@
+#pragma once
+#include "router.hpp"
 
 class Server{
 public:
@@ -11,4 +13,5 @@ private:
     bool setup_socket();
     void accept_loop();
     void handle_client(int cliend_fd);
+    Router router;
 };

@@ -177,6 +177,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/router.o: src/router.cpp.o
+.PHONY : src/router.o
+
+# target to build an object file
+src/router.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/router.cpp.o
+.PHONY : src/router.cpp.o
+
+src/router.i: src/router.cpp.i
+.PHONY : src/router.i
+
+# target to preprocess a source file
+src/router.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/router.cpp.i
+.PHONY : src/router.cpp.i
+
+src/router.s: src/router.cpp.s
+.PHONY : src/router.s
+
+# target to generate assembly for a file
+src/router.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/router.cpp.s
+.PHONY : src/router.cpp.s
+
 src/server.o: src/server.cpp.o
 .PHONY : src/server.o
 
@@ -216,6 +240,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/router.o"
+	@echo "... src/router.i"
+	@echo "... src/router.s"
 	@echo "... src/server.o"
 	@echo "... src/server.i"
 	@echo "... src/server.s"

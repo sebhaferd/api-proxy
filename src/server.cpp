@@ -7,6 +7,7 @@
 #include <cstdlib>
 #include "../include/server.hpp"
 #include "../include/http-request.hpp"
+#include "../include/router.hpp"
 
 
 Server::Server(int port)
@@ -47,10 +48,10 @@ bool Server::setup_socket(){
 }
 
 //forward http request to server
-std::string forward_to_server(const HttpRequest& req, const std::string& raw_data){
+std::string forward_to_server(const RouteTarget& target, const std::string& raw_data){
     //temp hardcoded destination
-    std::string dest_host = "example.com";
-    std::string dest_port = "80";
+    std::string dest_host = target.host;
+    std::string dest_port = target.port;
     //create socket for dest
     int forward_fd = socket(AF_INET,SOCK_STREAM, 0);
     if (forward_fd == -1){
@@ -79,11 +80,10 @@ std::string forward_to_server(const HttpRequest& req, const std::string& raw_dat
 
     }
     
-
     //send request to example.com
     std::string request =
         "GET / HTTP/1.1\r\n"
-        "Host: example.com\r\n"
+        "Host:" + target.host + "\r\n"
         "Connection: close\r\n"
         "\r\n";
 
@@ -93,7 +93,7 @@ std::string forward_to_server(const HttpRequest& req, const std::string& raw_dat
     std::string response;
     char buffer[4096];
     ssize_t bytes_recieved;
-    while (bytes_recieved = recv(forward_fd, buffer, sizeof(buffer), 0) > 0){
+    while ((bytes_recieved = recv(forward_fd, buffer, sizeof(buffer), 0)) > 0){
         response.append(buffer, bytes_recieved);
     }
 
@@ -130,11 +130,23 @@ void Server::handle_client(int client_fd){
     for (const auto [key, val] : req.headers){
         std::cout<<key<<": "<<val<<std::endl;
     }
+    //Get destination for result from router
+    RouteTarget target;
+    if (!router.resolve(req.path, target)){
+        std::string not_found = "404 not found\r\n"
+            "Content-Type: text/plain\r\n"
+            "Content-Length: 15\r\n"
+            "\r\n"
+            "Route not found";
 
-    //send response to client
-    std::string response = forward_to_server(req, raw_data);
-    send(client_fd, response.c_str(), response.size(), 0);
+        send(client_fd, not_found.c_str(), not_found.size(), 0);
+        return;
+    }
     
+    //send response to client
+    std::string response = forward_to_server(target, raw_data);
+    send(client_fd, response.c_str(), response.size(), 0);
+
 }
 
 
