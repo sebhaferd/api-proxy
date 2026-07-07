@@ -1,4 +1,4 @@
-Local API Gateway
+# API Gateway Proxy
 
 A local API gateway that sits between applications and external APIs.
 
@@ -15,12 +15,12 @@ Traffic monitoring
 
 The project is being built in modern C++ as a way to explore networking, backend infrastructure, systems programming, and security engineering from first principles.
 
-How to run project:
+## How to run project:
 
 Initialize proxy server:
-cmake --build build
-./build/proxy
+- $cmake --build build
+- $./build/proxy
 
 Send proxy request:
-curl http:/example.com
+- $curl http:/example.com
 
