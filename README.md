@@ -14,3 +14,13 @@ Configurable security policies
 Traffic monitoring
 
 The project is being built in modern C++ as a way to explore networking, backend infrastructure, systems programming, and security engineering from first principles.
+
+How to run project:
+
+Initialize proxy server:
+cmake --build build
+./build/proxy
+
+Send proxy request:
+curl http:/example.com
+
