@@ -1,4 +1,4 @@
-#Code architecture:
+# Code architecture:
 
 Client -> Proxy -> destination API -> Proxy -> Client
 

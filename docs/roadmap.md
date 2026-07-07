@@ -1,6 +1,6 @@
-#Code Roadmap:
+# Code Roadmap:
 
-##Standard Progression to API Proxy
+## Standard Progression to API Proxy
 
 - Version 1.0: Began with basic HTTP Server
 - Version 2.0: Implemented forward proxy with hardcoded destination
@@ -11,5 +11,5 @@
 - Version 7.0: caching
 - Version 8.0: concurrency/thread pool
 
-##Additional version extensions
+## Additional version extensions
 
