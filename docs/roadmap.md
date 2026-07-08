@@ -14,8 +14,7 @@
   Parse client HTTP request, Hardcode target port and destination, Initialize dest socket, send request to dest, forward response back to client.
   </details>
 
-- **v0.3:** Implemented routing for forward request destinations
-* <details>
+- **v0.3:** Implemented routing for forward request destinations * <details>
   <summary>more</summary>
   Implement router storing dest, port, prefix. Search router vector using prefix to find destination. Send request to dest and forward back to client. 
   </details>
