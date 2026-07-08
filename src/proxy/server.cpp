@@ -9,9 +9,9 @@
 #include <string>
 #include <sstream>
 
-#include "../include/server.hpp"
-#include "../include/http-request.hpp"
-#include "../include/router.hpp"
+#include "../../include/server.hpp"
+#include "../../include/http-request.hpp"
+#include "../../include/router.hpp"
 
 
 Server::Server(int port)

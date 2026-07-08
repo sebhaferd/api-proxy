@@ -36,11 +36,18 @@
     Stream log request, response, latency, and status to logging output file <br>
     </details>
 
-- **v0.5:** API key injection
-- **v0.6:** rate limiting
-- **v0.7:** caching
-- **v0.8:** concurrency/thread pool
-- **v0.9:** SQL logging
+- **v0.5:** Configuration based routing
+    <details>
+    <summary>Details</summary>
+    Measure latency of client interaction <br>
+    Stream log request, response, latency, and status to logging output file <br>
+    -Note add CLI feature later
+    </details>
+- **v0.6:** API key injection
+- **v0.7:** rate limiting
+- **v0.8:** caching
+- **v0.9:** concurrency/thread pool
+- **v1.0:** SQL logging
 
 ## Additional version extensions
 

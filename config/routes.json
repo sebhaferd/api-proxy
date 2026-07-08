@@ -1,0 +1,15 @@
+
+{
+    "/example": {
+        "host": "example.com",
+        "port": "80"
+    },
+    "/httpbin": {
+        "host": "httpbin.org",
+        "port": "80"
+    },
+    "/api": {
+        "host": "jsonplaceholder.typicode.com",
+        "port": "80"
+    }
+}

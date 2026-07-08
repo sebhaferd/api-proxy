@@ -129,30 +129,6 @@ proxy/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/build
 .PHONY : proxy/fast
 
-src/http-request.o: src/http-request.cpp.o
-.PHONY : src/http-request.o
-
-# target to build an object file
-src/http-request.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/http-request.cpp.o
-.PHONY : src/http-request.cpp.o
-
-src/http-request.i: src/http-request.cpp.i
-.PHONY : src/http-request.i
-
-# target to preprocess a source file
-src/http-request.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/http-request.cpp.i
-.PHONY : src/http-request.cpp.i
-
-src/http-request.s: src/http-request.cpp.s
-.PHONY : src/http-request.s
-
-# target to generate assembly for a file
-src/http-request.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/http-request.cpp.s
-.PHONY : src/http-request.cpp.s
-
 src/logging/logging.o: src/logging/logging.cpp.o
 .PHONY : src/logging/logging.o
 
@@ -201,53 +177,77 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/router.o: src/router.cpp.o
-.PHONY : src/router.o
+src/proxy/http-request.o: src/proxy/http-request.cpp.o
+.PHONY : src/proxy/http-request.o
 
 # target to build an object file
-src/router.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/router.cpp.o
-.PHONY : src/router.cpp.o
+src/proxy/http-request.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/proxy/http-request.cpp.o
+.PHONY : src/proxy/http-request.cpp.o
 
-src/router.i: src/router.cpp.i
-.PHONY : src/router.i
+src/proxy/http-request.i: src/proxy/http-request.cpp.i
+.PHONY : src/proxy/http-request.i
 
 # target to preprocess a source file
-src/router.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/router.cpp.i
-.PHONY : src/router.cpp.i
+src/proxy/http-request.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/proxy/http-request.cpp.i
+.PHONY : src/proxy/http-request.cpp.i
 
-src/router.s: src/router.cpp.s
-.PHONY : src/router.s
+src/proxy/http-request.s: src/proxy/http-request.cpp.s
+.PHONY : src/proxy/http-request.s
 
 # target to generate assembly for a file
-src/router.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/router.cpp.s
-.PHONY : src/router.cpp.s
+src/proxy/http-request.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/proxy/http-request.cpp.s
+.PHONY : src/proxy/http-request.cpp.s
 
-src/server.o: src/server.cpp.o
-.PHONY : src/server.o
+src/proxy/router.o: src/proxy/router.cpp.o
+.PHONY : src/proxy/router.o
 
 # target to build an object file
-src/server.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/server.cpp.o
-.PHONY : src/server.cpp.o
+src/proxy/router.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/proxy/router.cpp.o
+.PHONY : src/proxy/router.cpp.o
 
-src/server.i: src/server.cpp.i
-.PHONY : src/server.i
+src/proxy/router.i: src/proxy/router.cpp.i
+.PHONY : src/proxy/router.i
 
 # target to preprocess a source file
-src/server.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/server.cpp.i
-.PHONY : src/server.cpp.i
+src/proxy/router.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/proxy/router.cpp.i
+.PHONY : src/proxy/router.cpp.i
 
-src/server.s: src/server.cpp.s
-.PHONY : src/server.s
+src/proxy/router.s: src/proxy/router.cpp.s
+.PHONY : src/proxy/router.s
 
 # target to generate assembly for a file
-src/server.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/server.cpp.s
-.PHONY : src/server.cpp.s
+src/proxy/router.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/proxy/router.cpp.s
+.PHONY : src/proxy/router.cpp.s
+
+src/proxy/server.o: src/proxy/server.cpp.o
+.PHONY : src/proxy/server.o
+
+# target to build an object file
+src/proxy/server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/proxy/server.cpp.o
+.PHONY : src/proxy/server.cpp.o
+
+src/proxy/server.i: src/proxy/server.cpp.i
+.PHONY : src/proxy/server.i
+
+# target to preprocess a source file
+src/proxy/server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/proxy/server.cpp.i
+.PHONY : src/proxy/server.cpp.i
+
+src/proxy/server.s: src/proxy/server.cpp.s
+.PHONY : src/proxy/server.s
+
+# target to generate assembly for a file
+src/proxy/server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/proxy/server.cpp.s
+.PHONY : src/proxy/server.cpp.s
 
 # Help Target
 help:
@@ -258,21 +258,21 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... proxy"
-	@echo "... src/http-request.o"
-	@echo "... src/http-request.i"
-	@echo "... src/http-request.s"
 	@echo "... src/logging/logging.o"
 	@echo "... src/logging/logging.i"
 	@echo "... src/logging/logging.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/router.o"
-	@echo "... src/router.i"
-	@echo "... src/router.s"
-	@echo "... src/server.o"
-	@echo "... src/server.i"
-	@echo "... src/server.s"
+	@echo "... src/proxy/http-request.o"
+	@echo "... src/proxy/http-request.i"
+	@echo "... src/proxy/http-request.s"
+	@echo "... src/proxy/router.o"
+	@echo "... src/proxy/router.i"
+	@echo "... src/proxy/router.s"
+	@echo "... src/proxy/server.o"
+	@echo "... src/proxy/server.i"
+	@echo "... src/proxy/server.s"
 .PHONY : help
 
 

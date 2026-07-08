@@ -72,19 +72,19 @@ include CMakeFiles/proxy.dir/flags.make
 CMakeFiles/proxy.dir/codegen:
 .PHONY : CMakeFiles/proxy.dir/codegen
 
-CMakeFiles/proxy.dir/src/server.cpp.o: CMakeFiles/proxy.dir/flags.make
-CMakeFiles/proxy.dir/src/server.cpp.o: /Users/sebihaferd/Projects/api-proxy/src/server.cpp
-CMakeFiles/proxy.dir/src/server.cpp.o: CMakeFiles/proxy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sebihaferd/Projects/api-proxy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/proxy.dir/src/server.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/proxy.dir/src/server.cpp.o -MF CMakeFiles/proxy.dir/src/server.cpp.o.d -o CMakeFiles/proxy.dir/src/server.cpp.o -c /Users/sebihaferd/Projects/api-proxy/src/server.cpp
+CMakeFiles/proxy.dir/src/proxy/server.cpp.o: CMakeFiles/proxy.dir/flags.make
+CMakeFiles/proxy.dir/src/proxy/server.cpp.o: /Users/sebihaferd/Projects/api-proxy/src/proxy/server.cpp
+CMakeFiles/proxy.dir/src/proxy/server.cpp.o: CMakeFiles/proxy.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sebihaferd/Projects/api-proxy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/proxy.dir/src/proxy/server.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/proxy.dir/src/proxy/server.cpp.o -MF CMakeFiles/proxy.dir/src/proxy/server.cpp.o.d -o CMakeFiles/proxy.dir/src/proxy/server.cpp.o -c /Users/sebihaferd/Projects/api-proxy/src/proxy/server.cpp
 
-CMakeFiles/proxy.dir/src/server.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/proxy.dir/src/server.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/sebihaferd/Projects/api-proxy/src/server.cpp > CMakeFiles/proxy.dir/src/server.cpp.i
+CMakeFiles/proxy.dir/src/proxy/server.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/proxy.dir/src/proxy/server.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/sebihaferd/Projects/api-proxy/src/proxy/server.cpp > CMakeFiles/proxy.dir/src/proxy/server.cpp.i
 
-CMakeFiles/proxy.dir/src/server.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/proxy.dir/src/server.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/sebihaferd/Projects/api-proxy/src/server.cpp -o CMakeFiles/proxy.dir/src/server.cpp.s
+CMakeFiles/proxy.dir/src/proxy/server.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/proxy.dir/src/proxy/server.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/sebihaferd/Projects/api-proxy/src/proxy/server.cpp -o CMakeFiles/proxy.dir/src/proxy/server.cpp.s
 
 CMakeFiles/proxy.dir/src/main.cpp.o: CMakeFiles/proxy.dir/flags.make
 CMakeFiles/proxy.dir/src/main.cpp.o: /Users/sebihaferd/Projects/api-proxy/src/main.cpp
@@ -100,33 +100,33 @@ CMakeFiles/proxy.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/proxy.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/sebihaferd/Projects/api-proxy/src/main.cpp -o CMakeFiles/proxy.dir/src/main.cpp.s
 
-CMakeFiles/proxy.dir/src/http-request.cpp.o: CMakeFiles/proxy.dir/flags.make
-CMakeFiles/proxy.dir/src/http-request.cpp.o: /Users/sebihaferd/Projects/api-proxy/src/http-request.cpp
-CMakeFiles/proxy.dir/src/http-request.cpp.o: CMakeFiles/proxy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sebihaferd/Projects/api-proxy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/proxy.dir/src/http-request.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/proxy.dir/src/http-request.cpp.o -MF CMakeFiles/proxy.dir/src/http-request.cpp.o.d -o CMakeFiles/proxy.dir/src/http-request.cpp.o -c /Users/sebihaferd/Projects/api-proxy/src/http-request.cpp
+CMakeFiles/proxy.dir/src/proxy/http-request.cpp.o: CMakeFiles/proxy.dir/flags.make
+CMakeFiles/proxy.dir/src/proxy/http-request.cpp.o: /Users/sebihaferd/Projects/api-proxy/src/proxy/http-request.cpp
+CMakeFiles/proxy.dir/src/proxy/http-request.cpp.o: CMakeFiles/proxy.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sebihaferd/Projects/api-proxy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/proxy.dir/src/proxy/http-request.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/proxy.dir/src/proxy/http-request.cpp.o -MF CMakeFiles/proxy.dir/src/proxy/http-request.cpp.o.d -o CMakeFiles/proxy.dir/src/proxy/http-request.cpp.o -c /Users/sebihaferd/Projects/api-proxy/src/proxy/http-request.cpp
 
-CMakeFiles/proxy.dir/src/http-request.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/proxy.dir/src/http-request.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/sebihaferd/Projects/api-proxy/src/http-request.cpp > CMakeFiles/proxy.dir/src/http-request.cpp.i
+CMakeFiles/proxy.dir/src/proxy/http-request.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/proxy.dir/src/proxy/http-request.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/sebihaferd/Projects/api-proxy/src/proxy/http-request.cpp > CMakeFiles/proxy.dir/src/proxy/http-request.cpp.i
 
-CMakeFiles/proxy.dir/src/http-request.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/proxy.dir/src/http-request.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/sebihaferd/Projects/api-proxy/src/http-request.cpp -o CMakeFiles/proxy.dir/src/http-request.cpp.s
+CMakeFiles/proxy.dir/src/proxy/http-request.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/proxy.dir/src/proxy/http-request.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/sebihaferd/Projects/api-proxy/src/proxy/http-request.cpp -o CMakeFiles/proxy.dir/src/proxy/http-request.cpp.s
 
-CMakeFiles/proxy.dir/src/router.cpp.o: CMakeFiles/proxy.dir/flags.make
-CMakeFiles/proxy.dir/src/router.cpp.o: /Users/sebihaferd/Projects/api-proxy/src/router.cpp
-CMakeFiles/proxy.dir/src/router.cpp.o: CMakeFiles/proxy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sebihaferd/Projects/api-proxy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/proxy.dir/src/router.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/proxy.dir/src/router.cpp.o -MF CMakeFiles/proxy.dir/src/router.cpp.o.d -o CMakeFiles/proxy.dir/src/router.cpp.o -c /Users/sebihaferd/Projects/api-proxy/src/router.cpp
+CMakeFiles/proxy.dir/src/proxy/router.cpp.o: CMakeFiles/proxy.dir/flags.make
+CMakeFiles/proxy.dir/src/proxy/router.cpp.o: /Users/sebihaferd/Projects/api-proxy/src/proxy/router.cpp
+CMakeFiles/proxy.dir/src/proxy/router.cpp.o: CMakeFiles/proxy.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sebihaferd/Projects/api-proxy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/proxy.dir/src/proxy/router.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/proxy.dir/src/proxy/router.cpp.o -MF CMakeFiles/proxy.dir/src/proxy/router.cpp.o.d -o CMakeFiles/proxy.dir/src/proxy/router.cpp.o -c /Users/sebihaferd/Projects/api-proxy/src/proxy/router.cpp
 
-CMakeFiles/proxy.dir/src/router.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/proxy.dir/src/router.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/sebihaferd/Projects/api-proxy/src/router.cpp > CMakeFiles/proxy.dir/src/router.cpp.i
+CMakeFiles/proxy.dir/src/proxy/router.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/proxy.dir/src/proxy/router.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/sebihaferd/Projects/api-proxy/src/proxy/router.cpp > CMakeFiles/proxy.dir/src/proxy/router.cpp.i
 
-CMakeFiles/proxy.dir/src/router.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/proxy.dir/src/router.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/sebihaferd/Projects/api-proxy/src/router.cpp -o CMakeFiles/proxy.dir/src/router.cpp.s
+CMakeFiles/proxy.dir/src/proxy/router.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/proxy.dir/src/proxy/router.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/sebihaferd/Projects/api-proxy/src/proxy/router.cpp -o CMakeFiles/proxy.dir/src/proxy/router.cpp.s
 
 CMakeFiles/proxy.dir/src/logging/logging.cpp.o: CMakeFiles/proxy.dir/flags.make
 CMakeFiles/proxy.dir/src/logging/logging.cpp.o: /Users/sebihaferd/Projects/api-proxy/src/logging/logging.cpp
@@ -144,19 +144,19 @@ CMakeFiles/proxy.dir/src/logging/logging.cpp.s: cmake_force
 
 # Object files for target proxy
 proxy_OBJECTS = \
-"CMakeFiles/proxy.dir/src/server.cpp.o" \
+"CMakeFiles/proxy.dir/src/proxy/server.cpp.o" \
 "CMakeFiles/proxy.dir/src/main.cpp.o" \
-"CMakeFiles/proxy.dir/src/http-request.cpp.o" \
-"CMakeFiles/proxy.dir/src/router.cpp.o" \
+"CMakeFiles/proxy.dir/src/proxy/http-request.cpp.o" \
+"CMakeFiles/proxy.dir/src/proxy/router.cpp.o" \
 "CMakeFiles/proxy.dir/src/logging/logging.cpp.o"
 
 # External object files for target proxy
 proxy_EXTERNAL_OBJECTS =
 
-proxy: CMakeFiles/proxy.dir/src/server.cpp.o
+proxy: CMakeFiles/proxy.dir/src/proxy/server.cpp.o
 proxy: CMakeFiles/proxy.dir/src/main.cpp.o
-proxy: CMakeFiles/proxy.dir/src/http-request.cpp.o
-proxy: CMakeFiles/proxy.dir/src/router.cpp.o
+proxy: CMakeFiles/proxy.dir/src/proxy/http-request.cpp.o
+proxy: CMakeFiles/proxy.dir/src/proxy/router.cpp.o
 proxy: CMakeFiles/proxy.dir/src/logging/logging.cpp.o
 proxy: CMakeFiles/proxy.dir/build.make
 proxy: CMakeFiles/proxy.dir/link.txt

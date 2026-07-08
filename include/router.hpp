@@ -20,10 +20,7 @@ public:
     bool resolve(const std::string& path, RouteTarget& target) const;
 
 private:
-    std::vector<Route> routes = 
-    {
-        {"/example", {"example.com", "80"}},
-        {"/httpbin", {"httpbin.org", "80"}}
-    };
+    std::vector<Route> json_to_routes(const std::string& file_name);
+    std::vector<Route> routes = json_to_routes("config/routes.json");
 };
 
