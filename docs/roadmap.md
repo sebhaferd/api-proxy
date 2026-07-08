@@ -9,10 +9,10 @@
   </details>
 
 - **v0.2:** Implemented forward proxy with hardcoded destination
-* <details>
-  <summary>more</summary>
-  Parse client HTTP request, Hardcode target port and destination, Initialize dest socket, send request to dest, forward response back to client.
-  </details>
+    <details>
+    <summary>more</summary>
+    Parse client HTTP request, Hardcode target port and destination, Initialize dest socket, send request to dest, forward response back to client.
+    </details>
 
 - **v0.3:** Implemented routing for forward request destinations * <details>
   <summary>more</summary>
