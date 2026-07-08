@@ -1,6 +1,6 @@
 # Code architecture:
 
-```text
+
 Client -> Proxy -> destination API 
 destination API -> Proxy -> Client
 
