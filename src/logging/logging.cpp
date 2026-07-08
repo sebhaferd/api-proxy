@@ -23,6 +23,6 @@ void Logger::log_request(
             target_host << " " <<
             forward_path << " " <<
             "status = " << status_code << 
-            " latency = " << latency_ms << "ms " <<
+            " latency = " << latency_ms << " ms " <<
             "size = " << response_size<<std::endl;
 }
