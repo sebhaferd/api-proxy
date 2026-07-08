@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/sebihaferd/Projects/api-proxy/src/http-request.cpp" "CMakeFiles/proxy.dir/src/http-request.cpp.o" "gcc" "CMakeFiles/proxy.dir/src/http-request.cpp.o.d"
+  "/Users/sebihaferd/Projects/api-proxy/src/logging/logging.cpp" "CMakeFiles/proxy.dir/src/logging/logging.cpp.o" "gcc" "CMakeFiles/proxy.dir/src/logging/logging.cpp.o.d"
   "/Users/sebihaferd/Projects/api-proxy/src/main.cpp" "CMakeFiles/proxy.dir/src/main.cpp.o" "gcc" "CMakeFiles/proxy.dir/src/main.cpp.o.d"
   "/Users/sebihaferd/Projects/api-proxy/src/router.cpp" "CMakeFiles/proxy.dir/src/router.cpp.o" "gcc" "CMakeFiles/proxy.dir/src/router.cpp.o.d"
   "/Users/sebihaferd/Projects/api-proxy/src/server.cpp" "CMakeFiles/proxy.dir/src/server.cpp.o" "gcc" "CMakeFiles/proxy.dir/src/server.cpp.o.d"

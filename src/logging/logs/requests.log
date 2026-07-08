@@ -1,0 +1,4 @@
+GET /httpbin/get -> httpbin.org /get status = 200latency = 0 ms 423
+GET /httpbin/get -> httpbin.org /get status = 200 latency = 0 ms 423
+GET /httpbin/get -> httpbin.org /get status = 200 latency = 114836 ms size = 423
+GET /httpbin/get -> httpbin.org /get status = 200 latency = 108041ms size = 423

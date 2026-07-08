@@ -5,13 +5,17 @@
 #include <unistd.h>
 #include <arpa/inet.h>
 #include <cstdlib>
+#include <chrono>
+#include <string>
+#include <sstream>
+
 #include "../include/server.hpp"
 #include "../include/http-request.hpp"
 #include "../include/router.hpp"
 
 
 Server::Server(int port)
-    : port(port), server_fd(-1){}
+    : port(port), server_fd(-1), logger("src/logging/logs/requests.log") {}
 
 void Server::start(){
     if (!setup_socket()){
@@ -48,7 +52,7 @@ bool Server::setup_socket(){
 }
 
 //forward http request to server
-std::string forward_to_server(const RouteTarget& target, const std::string& raw_data){
+std::string forward_to_server(const RouteTarget& target, const std::string& forward_path, const std::string& raw_data){
     //temp hardcoded destination
     std::string dest_host = target.host;
     std::string dest_port = target.port;
@@ -82,10 +86,12 @@ std::string forward_to_server(const RouteTarget& target, const std::string& raw_
     
     //send request to example.com
     std::string request =
-        "GET / HTTP/1.1\r\n"
-        "Host:" + target.host + "\r\n"
+        "GET " + forward_path + " HTTP/1.1\r\n"
+        "Host: " + target.host + "\r\n"
         "Connection: close\r\n"
         "\r\n";
+    std::cout << "Target host: " << target.host << "\n";
+    std::cout << "Forward path: " << forward_path << "\n";
 
     send(forward_fd, request.c_str(), request.size(), 0);
 
@@ -104,9 +110,22 @@ std::string forward_to_server(const RouteTarget& target, const std::string& raw_
     
 }
 
+int get_status_code(const std::string& response){
+    std::istringstream stream(response);
+
+    std::string http_version;
+    int status_code;
+    stream >> http_version >> status_code;
+    if (stream.fail()){
+        return 0; // couldnt parse response
+    }
+    return status_code;
+}
 void Server::handle_client(int client_fd){
     //set char buffer for input
     char buffer[4096] = {0};
+    //start clock to measure latency
+    auto start = std::chrono::system_clock::now();
     //read bytes from client socket
     ssize_t bytes_read = recv(client_fd, (void*)buffer, sizeof(buffer)-1, 0);
     if (bytes_read < 0){
@@ -133,18 +152,39 @@ void Server::handle_client(int client_fd){
     //Get destination for result from router
     RouteTarget target;
     if (!router.resolve(req.path, target)){
-        std::string not_found = "404 not found\r\n"
+        std::string not_found = 
+            "HTTP/1.1 404 not found\r\n"
             "Content-Type: text/plain\r\n"
             "Content-Length: 15\r\n"
             "\r\n"
             "Route not found";
-
+    
         send(client_fd, not_found.c_str(), not_found.size(), 0);
         return;
     }
     
+    //set forward path to substring after prefix of route target
+    std::string forward_path = req.path.substr(target.prefix.size());
+    if (forward_path.empty()){
+        forward_path = "/";
+    }
+    
+
     //send response to client
-    std::string response = forward_to_server(target, raw_data);
+    std::string response = forward_to_server(target, forward_path, raw_data);
+
+    //parse for status code from application response, eg. 200 OK
+    int status_code = get_status_code(response);
+    //measure latency from client request intialization to response 
+    auto end = std::chrono::system_clock::now();
+    auto elapsed = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
+    long latency = elapsed.count();
+
+    //log request
+    logger.log_request(req.method, req.path, target.host, 
+                        forward_path, status_code, 
+                        latency, response.size());
+
     send(client_fd, response.c_str(), response.size(), 0);
 
 }

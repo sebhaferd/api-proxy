@@ -8,4 +8,5 @@ add_executable(proxy
     src/main.cpp
     src/http-request.cpp
     src/router.cpp
+    src/logging/logging.cpp
     )

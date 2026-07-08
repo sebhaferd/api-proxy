@@ -153,6 +153,30 @@ src/http-request.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/http-request.cpp.s
 .PHONY : src/http-request.cpp.s
 
+src/logging/logging.o: src/logging/logging.cpp.o
+.PHONY : src/logging/logging.o
+
+# target to build an object file
+src/logging/logging.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/logging/logging.cpp.o
+.PHONY : src/logging/logging.cpp.o
+
+src/logging/logging.i: src/logging/logging.cpp.i
+.PHONY : src/logging/logging.i
+
+# target to preprocess a source file
+src/logging/logging.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/logging/logging.cpp.i
+.PHONY : src/logging/logging.cpp.i
+
+src/logging/logging.s: src/logging/logging.cpp.s
+.PHONY : src/logging/logging.s
+
+# target to generate assembly for a file
+src/logging/logging.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/logging/logging.cpp.s
+.PHONY : src/logging/logging.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -237,6 +261,9 @@ help:
 	@echo "... src/http-request.o"
 	@echo "... src/http-request.i"
 	@echo "... src/http-request.s"
+	@echo "... src/logging/logging.o"
+	@echo "... src/logging/logging.i"
+	@echo "... src/logging/logging.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

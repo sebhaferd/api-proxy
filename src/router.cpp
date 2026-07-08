@@ -11,6 +11,7 @@ bool Router::resolve(const std::string& path, RouteTarget& target) const{
     for (const Route& route : routes){
         if (path.rfind(route.prefix, 0) == 0){
             target = route.target;
+            target.prefix = route.prefix;
             return true;
         }
     }

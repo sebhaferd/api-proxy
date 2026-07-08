@@ -1,5 +1,8 @@
 #pragma once
 #include "router.hpp"
+#include "logging.hpp"
+
+
 
 class Server{
 public:
@@ -14,4 +17,5 @@ private:
     void accept_loop();
     void handle_client(int cliend_fd);
     Router router;
+    Logger logger;
 };

@@ -6,6 +6,7 @@
 struct RouteTarget{
     std::string host;
     std::string port;
+    std::string prefix;
 };
 
 struct Route{
