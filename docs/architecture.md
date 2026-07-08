@@ -1,7 +1,12 @@
 # Code architecture:
 
-Client -> Proxy -> destination API -> Proxy -> Client
+```text
+Client -> Proxy -> destination API 
+destination API -> Proxy -> Client
 
 ##Features of Proxy:
 - Parse Http Request
-- Send back Response
+- Route request to destination API
+- Forward request to destination API
+- Send back response to client
+- log request details and latency

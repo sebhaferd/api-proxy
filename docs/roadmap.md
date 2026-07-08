@@ -2,14 +2,15 @@
 
 ## Standard Progression to API Proxy
 
-- Version 1.0: Began with basic HTTP Server
-- Version 2.0: Implemented forward proxy with hardcoded destination
-- Version 3.0: Implemented routing for forwarding destinations
-- Version 4.0: Implemeted logging
-- Version 5.0: API key injection
-- Version 6.0: rate limiting
-- Version 7.0: caching
-- Version 8.0: concurrency/thread pool
+- **v0.1:** Began with basic HTTP Server
+- **v0.2:** Implemented forward proxy with hardcoded destination
+- **v0.3:** Implemented routing for forward request destinations
+- **v0.4:** Implemeted logging into log file
+- **v0.5:** API key injection
+- **v0.6:** rate limiting
+- **v0.7:** caching
+- **v0.8:** concurrency/thread pool
+- **v0.9:** SQL logging
 
 ## Additional version extensions
 
