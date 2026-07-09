@@ -70,6 +70,7 @@
     </details>
 
 - **v0.8:** SQL request logging
+    </details>
     <summary>Details</summary> 
     Goal: Replace file based logging with database to store log requests <br> 
     Created SQL table storing log data, including request, response size, latency <br>
@@ -80,10 +81,10 @@
     </details>
 
 - **v0.9:** admin logs
+    </details>
     <summary>Details</summary> 
     Implemented admin logs endpoint to return last 10 request logs from database<br>
     Recieve HTTP request from admin -> parse sql table to json output response <br>
-
     </details>
 
 - **v1.0:** caching
