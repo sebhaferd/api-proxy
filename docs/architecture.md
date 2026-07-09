@@ -10,3 +10,4 @@
 - Forward request to destination API
 - Send back response to client
 - log request details and latency
+- concurrently handle client requests
