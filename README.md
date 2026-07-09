@@ -1,22 +1,36 @@
 # API Gateway Proxy
 
-A local API gateway that sits between applications and external APIs.
+This project receives API HTTP requests from client applications, forwards them to the appropriate service, and returns the response
 
-This gateway receives API HTTP requests from client applications, forwards them to the appropriate service, and returns the response
+## Current Features
 
-Intended Functionality includes: 
+- HTTP request forwarding
+- Request routing
+- JSON file route configuration
+- API key and additional header injections
+- Logging client requests
+- Logging performance and latency metrics
+- Thread pool for handling clients concurrently
 
-Secure API key management <br>
-Request and response logging <br>
-Performance and latency metrics <br>
-Request routing <br>
-Concurrency to handle clients <br>
-Rate limiting <br>
-Response caching <br>
-TLS protocol <br>
+## Planned Features
 
+- Rate limiting
+- Response caching
+- HTTPS/TLS
+- SQL logging
+- Simple dashboard
+- Traffic monitoring
 
-This project is being built as a way to explore networking, backend infrastructure, systems programming, and security engineering as a learning project.
+## Purpose
+
+This project is being built as a learning project to explore:
+
+- Networking
+- Systems Programming
+- Distributed systems
+- Backend Infrastructure
+- Concurrent Programming
+- Security Engineering
 
 ## How to run project:
 
