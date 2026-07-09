@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: api_proxy_postgres
+    environment:
+      POSTGRES_DB: proxy_logs
+      POSTGRES_USER: proxy_user
+      POSTGRES_PASSWORD: proxy_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

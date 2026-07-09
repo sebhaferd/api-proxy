@@ -1,5 +1,6 @@
-CMakeFiles/proxy.dir/src/main.cpp.o: \
-  /Users/sebihaferd/Projects/api-proxy/src/main.cpp \
+CMakeFiles/proxy.dir/src/logging/sql-logger.cpp.o: \
+  /Users/sebihaferd/Projects/api-proxy/src/logging/sql-logger.cpp \
+  /Users/sebihaferd/Projects/api-proxy/src/logging/../../include/sql-logger.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__config_site \
@@ -978,9 +979,6 @@ CMakeFiles/proxy.dir/src/main.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/print \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/unistd.h \
-  /Users/sebihaferd/Projects/api-proxy/src/../include/server.hpp \
-  /Users/sebihaferd/Projects/api-proxy/src/../include/router.hpp \
-  /Users/sebihaferd/Projects/api-proxy/src/../include/sql-logger.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/fstream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/path.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \

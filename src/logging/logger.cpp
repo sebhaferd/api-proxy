@@ -1,4 +1,4 @@
-#include "../../include/logging.hpp"
+#include "../../include/logger.hpp"
 
 Logger::Logger(const std::string& file_path)
     : file_path(file_path) {}

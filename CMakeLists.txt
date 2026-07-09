@@ -10,4 +10,9 @@ add_executable(proxy
     src/proxy/router.cpp
     src/logging/logger.cpp
     src/proxy/thread-pool.cpp
+    src/logging/sql-logger.cpp
 )
+
+target_include_directories(proxy PRIVATE /opt/homebrew/opt/libpq/include)
+target_link_directories(proxy PRIVATE /opt/homebrew/opt/libpq/lib)
+target_link_libraries(proxy pq)

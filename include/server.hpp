@@ -1,6 +1,6 @@
 #pragma once
 #include "router.hpp"
-#include "logger.hpp"
+#include "sql-logger.hpp"
 
 
 
@@ -17,5 +17,5 @@ private:
     void accept_loop();
     void handle_client(int cliend_fd);
     Router router;
-    Logger logger;
+    SqlLogger logger;
 };

@@ -1031,7 +1031,7 @@ CMakeFiles/proxy.dir/src/proxy/server.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__charconv/to_chars.h \
   /Users/sebihaferd/Projects/api-proxy/src/proxy/../../include/server.hpp \
   /Users/sebihaferd/Projects/api-proxy/src/proxy/../../include/router.hpp \
-  /Users/sebihaferd/Projects/api-proxy/src/proxy/../../include/logging.hpp \
+  /Users/sebihaferd/Projects/api-proxy/src/proxy/../../include/sql-logger.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/fstream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/path.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
@@ -1051,6 +1051,8 @@ CMakeFiles/proxy.dir/src/proxy/server.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/path_iterator.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/recursive_directory_iterator.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/u8path.h \
+  /opt/homebrew/opt/libpq/include/libpq-fe.h \
+  /opt/homebrew/opt/libpq/include/postgres_ext.h \
   /Users/sebihaferd/Projects/api-proxy/src/proxy/../../include/http-request.hpp \
   /Users/sebihaferd/Projects/api-proxy/src/proxy/../../include/thread-pool.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/thread \

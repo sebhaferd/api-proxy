@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/opt/homebrew/opt/libpq/include
 
 CXX_FLAGSarm64 = -std=gnu++20 -arch arm64
 

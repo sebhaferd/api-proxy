@@ -128,19 +128,19 @@ CMakeFiles/proxy.dir/src/proxy/router.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/proxy.dir/src/proxy/router.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/sebihaferd/Projects/api-proxy/src/proxy/router.cpp -o CMakeFiles/proxy.dir/src/proxy/router.cpp.s
 
-CMakeFiles/proxy.dir/src/logging/logging.cpp.o: CMakeFiles/proxy.dir/flags.make
-CMakeFiles/proxy.dir/src/logging/logging.cpp.o: /Users/sebihaferd/Projects/api-proxy/src/logging/logging.cpp
-CMakeFiles/proxy.dir/src/logging/logging.cpp.o: CMakeFiles/proxy.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sebihaferd/Projects/api-proxy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/proxy.dir/src/logging/logging.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/proxy.dir/src/logging/logging.cpp.o -MF CMakeFiles/proxy.dir/src/logging/logging.cpp.o.d -o CMakeFiles/proxy.dir/src/logging/logging.cpp.o -c /Users/sebihaferd/Projects/api-proxy/src/logging/logging.cpp
+CMakeFiles/proxy.dir/src/logging/logger.cpp.o: CMakeFiles/proxy.dir/flags.make
+CMakeFiles/proxy.dir/src/logging/logger.cpp.o: /Users/sebihaferd/Projects/api-proxy/src/logging/logger.cpp
+CMakeFiles/proxy.dir/src/logging/logger.cpp.o: CMakeFiles/proxy.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sebihaferd/Projects/api-proxy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/proxy.dir/src/logging/logger.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/proxy.dir/src/logging/logger.cpp.o -MF CMakeFiles/proxy.dir/src/logging/logger.cpp.o.d -o CMakeFiles/proxy.dir/src/logging/logger.cpp.o -c /Users/sebihaferd/Projects/api-proxy/src/logging/logger.cpp
 
-CMakeFiles/proxy.dir/src/logging/logging.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/proxy.dir/src/logging/logging.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/sebihaferd/Projects/api-proxy/src/logging/logging.cpp > CMakeFiles/proxy.dir/src/logging/logging.cpp.i
+CMakeFiles/proxy.dir/src/logging/logger.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/proxy.dir/src/logging/logger.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/sebihaferd/Projects/api-proxy/src/logging/logger.cpp > CMakeFiles/proxy.dir/src/logging/logger.cpp.i
 
-CMakeFiles/proxy.dir/src/logging/logging.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/proxy.dir/src/logging/logging.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/sebihaferd/Projects/api-proxy/src/logging/logging.cpp -o CMakeFiles/proxy.dir/src/logging/logging.cpp.s
+CMakeFiles/proxy.dir/src/logging/logger.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/proxy.dir/src/logging/logger.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/sebihaferd/Projects/api-proxy/src/logging/logger.cpp -o CMakeFiles/proxy.dir/src/logging/logger.cpp.s
 
 CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o: CMakeFiles/proxy.dir/flags.make
 CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o: /Users/sebihaferd/Projects/api-proxy/src/proxy/thread-pool.cpp
@@ -156,14 +156,29 @@ CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/sebihaferd/Projects/api-proxy/src/proxy/thread-pool.cpp -o CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.s
 
+CMakeFiles/proxy.dir/src/logging/sql-logger.cpp.o: CMakeFiles/proxy.dir/flags.make
+CMakeFiles/proxy.dir/src/logging/sql-logger.cpp.o: /Users/sebihaferd/Projects/api-proxy/src/logging/sql-logger.cpp
+CMakeFiles/proxy.dir/src/logging/sql-logger.cpp.o: CMakeFiles/proxy.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sebihaferd/Projects/api-proxy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/proxy.dir/src/logging/sql-logger.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/proxy.dir/src/logging/sql-logger.cpp.o -MF CMakeFiles/proxy.dir/src/logging/sql-logger.cpp.o.d -o CMakeFiles/proxy.dir/src/logging/sql-logger.cpp.o -c /Users/sebihaferd/Projects/api-proxy/src/logging/sql-logger.cpp
+
+CMakeFiles/proxy.dir/src/logging/sql-logger.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/proxy.dir/src/logging/sql-logger.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/sebihaferd/Projects/api-proxy/src/logging/sql-logger.cpp > CMakeFiles/proxy.dir/src/logging/sql-logger.cpp.i
+
+CMakeFiles/proxy.dir/src/logging/sql-logger.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/proxy.dir/src/logging/sql-logger.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/sebihaferd/Projects/api-proxy/src/logging/sql-logger.cpp -o CMakeFiles/proxy.dir/src/logging/sql-logger.cpp.s
+
 # Object files for target proxy
 proxy_OBJECTS = \
 "CMakeFiles/proxy.dir/src/proxy/server.cpp.o" \
 "CMakeFiles/proxy.dir/src/main.cpp.o" \
 "CMakeFiles/proxy.dir/src/proxy/http-request.cpp.o" \
 "CMakeFiles/proxy.dir/src/proxy/router.cpp.o" \
-"CMakeFiles/proxy.dir/src/logging/logging.cpp.o" \
-"CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o"
+"CMakeFiles/proxy.dir/src/logging/logger.cpp.o" \
+"CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o" \
+"CMakeFiles/proxy.dir/src/logging/sql-logger.cpp.o"
 
 # External object files for target proxy
 proxy_EXTERNAL_OBJECTS =
@@ -172,11 +187,12 @@ proxy: CMakeFiles/proxy.dir/src/proxy/server.cpp.o
 proxy: CMakeFiles/proxy.dir/src/main.cpp.o
 proxy: CMakeFiles/proxy.dir/src/proxy/http-request.cpp.o
 proxy: CMakeFiles/proxy.dir/src/proxy/router.cpp.o
-proxy: CMakeFiles/proxy.dir/src/logging/logging.cpp.o
+proxy: CMakeFiles/proxy.dir/src/logging/logger.cpp.o
 proxy: CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o
+proxy: CMakeFiles/proxy.dir/src/logging/sql-logger.cpp.o
 proxy: CMakeFiles/proxy.dir/build.make
 proxy: CMakeFiles/proxy.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/sebihaferd/Projects/api-proxy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable proxy"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/sebihaferd/Projects/api-proxy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable proxy"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/proxy.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

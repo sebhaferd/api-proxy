@@ -16,7 +16,7 @@
 
 
 Server::Server(int port)
-    : port(port), server_fd(-1), logger("src/logging/logs/requests.log") {}
+    : port(port), server_fd(-1), logger() {}
 
 void Server::start(){
     if (!setup_socket()){

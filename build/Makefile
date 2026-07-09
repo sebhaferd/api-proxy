@@ -129,29 +129,53 @@ proxy/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/build
 .PHONY : proxy/fast
 
-src/logging/logging.o: src/logging/logging.cpp.o
-.PHONY : src/logging/logging.o
+src/logging/logger.o: src/logging/logger.cpp.o
+.PHONY : src/logging/logger.o
 
 # target to build an object file
-src/logging/logging.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/logging/logging.cpp.o
-.PHONY : src/logging/logging.cpp.o
+src/logging/logger.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/logging/logger.cpp.o
+.PHONY : src/logging/logger.cpp.o
 
-src/logging/logging.i: src/logging/logging.cpp.i
-.PHONY : src/logging/logging.i
+src/logging/logger.i: src/logging/logger.cpp.i
+.PHONY : src/logging/logger.i
 
 # target to preprocess a source file
-src/logging/logging.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/logging/logging.cpp.i
-.PHONY : src/logging/logging.cpp.i
+src/logging/logger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/logging/logger.cpp.i
+.PHONY : src/logging/logger.cpp.i
 
-src/logging/logging.s: src/logging/logging.cpp.s
-.PHONY : src/logging/logging.s
+src/logging/logger.s: src/logging/logger.cpp.s
+.PHONY : src/logging/logger.s
 
 # target to generate assembly for a file
-src/logging/logging.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/logging/logging.cpp.s
-.PHONY : src/logging/logging.cpp.s
+src/logging/logger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/logging/logger.cpp.s
+.PHONY : src/logging/logger.cpp.s
+
+src/logging/sql-logger.o: src/logging/sql-logger.cpp.o
+.PHONY : src/logging/sql-logger.o
+
+# target to build an object file
+src/logging/sql-logger.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/logging/sql-logger.cpp.o
+.PHONY : src/logging/sql-logger.cpp.o
+
+src/logging/sql-logger.i: src/logging/sql-logger.cpp.i
+.PHONY : src/logging/sql-logger.i
+
+# target to preprocess a source file
+src/logging/sql-logger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/logging/sql-logger.cpp.i
+.PHONY : src/logging/sql-logger.cpp.i
+
+src/logging/sql-logger.s: src/logging/sql-logger.cpp.s
+.PHONY : src/logging/sql-logger.s
+
+# target to generate assembly for a file
+src/logging/sql-logger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/logging/sql-logger.cpp.s
+.PHONY : src/logging/sql-logger.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -282,9 +306,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... proxy"
-	@echo "... src/logging/logging.o"
-	@echo "... src/logging/logging.i"
-	@echo "... src/logging/logging.s"
+	@echo "... src/logging/logger.o"
+	@echo "... src/logging/logger.i"
+	@echo "... src/logging/logger.s"
+	@echo "... src/logging/sql-logger.o"
+	@echo "... src/logging/sql-logger.i"
+	@echo "... src/logging/sql-logger.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
