@@ -5,6 +5,7 @@
 ### **v0.1:** Began with basic HTTP Server
 <details>
 <summary>Details</summary>
+
 Goal: Build basic server able to accept TCP connections and parse HTTP requests
 Initialize Server socket <br>
 Listen for TCP connections <br>
