@@ -69,8 +69,21 @@
     Wake all workers and join each worker thread in destructor <br>
     </details>
 
-- **v0.8:** SQL logging
-- **v0.9:** simple frontend/dashboard
+- **v0.8:** SQL request logging
+    <summary>Details</summary> 
+    Goal: Replace file based logging with database to store log requests <br> 
+    Created SQL table storing log data, including request, response size, latency <br>
+    Built `SqlLogger` class to connect to Postgres using `libpq` and insert log entries <br>
+    Containerized Postgres using docker for a portable environment <br>
+    Pass each log request parameter into row as value using placeholder <br>
+    Protect shared database writes with `std::mutex` with concurrent worker threads <br>
+    </details>
+
+- **v0.9:** admin logs
+    <summary>Details</summary> 
+    Implemented admin logs endpoint to return last 10 request logs
+    </details>
+
 - **v1.0:** caching
 - **v1.1:** rate limiting
 - **v1.2:** HTTPS

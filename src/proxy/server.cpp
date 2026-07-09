@@ -53,7 +53,9 @@ bool Server::setup_socket(){
 }
 
 //forward http request to server
-std::string forward_to_server(const RouteTarget& target, const std::string& forward_path, const std::string& raw_data){
+std::string forward_to_server(const RouteTarget& target, 
+        const std::string& forward_path,
+        HttpRequest& req){
     //temp hardcoded destination
     std::string dest_host = target.host;
     std::string dest_port = target.port;
@@ -84,17 +86,14 @@ std::string forward_to_server(const RouteTarget& target, const std::string& forw
         return "";
 
     }
-    
-    //send request to example.com
-    std::string request =
-        "GET " + forward_path + " HTTP/1.1\r\n"
-        "Host: " + target.host + "\r\n"
-        "Connection: close\r\n"
-        "\r\n";
-    std::cout << "Target host: " << target.host << "\n";
-    std::cout << "Forward path: " << forward_path << "\n";
+    std::ostringstream request;
+    request << req.method << " " << forward_path << " " << req.version << "\r\n";
 
-    send(forward_fd, request.c_str(), request.size(), 0);
+    for (const auto& [key, val] : req.headers) {
+        request << key << ": " << val << "\r\n";
+    }
+    std::string request_str = request.str();
+    send(forward_fd, request_str.c_str(), request_str.size(), 0);
 
     //recieve response from example.com
     std::string response;
@@ -123,6 +122,30 @@ int get_status_code(const std::string& response){
     return status_code;
 }
 
+void Server::return_recent_logs(int client_fd){
+    std::string body = logger.get_recent_logs_json();
+    std::string response = 
+        "HTTP/1.1 200 OK\r\n"
+        "Content-Type: application/json\r\n"
+        "Content-length: " + std::to_string(body.size()) + "\r\n"
+        + body;
+    send(client_fd, response.c_str(), response.size(), 0);
+    close(client_fd);
+    return;
+}
+
+void Server::error404(int client_fd){
+    std::string body = "Route not found";
+    std::string not_found = 
+        "HTTP/1.1 404 not found\r\n"
+        "Content-Type: text/plain\r\n"
+        "Content-Length: " + std::to_string(body.size()) + "\r\n"
+        "\r\n"
+        + body;
+    
+    send(client_fd, not_found.c_str(), not_found.size(), 0);
+    close(client_fd);
+}
 void Server::handle_client(int client_fd){
     //concurrency testing: output client socket ind and current thread
     std::cout << "client_fd=" << client_fd
@@ -147,18 +170,14 @@ void Server::handle_client(int client_fd){
     //convert bytes to string
     std::string raw_data(buffer, bytes_read);
     HttpRequest req = HttpRequest::parse(raw_data);
-
+    if (req.path == "/admin/logs"){
+        return_recent_logs(client_fd);
+        return;
+    }
     //Get destination for result from router vector
     Route route;
     if (!router.resolve(req.path, route)){
-        std::string not_found = 
-            "HTTP/1.1 404 not found\r\n"
-            "Content-Type: text/plain\r\n"
-            "Content-Length: 15\r\n"
-            "\r\n"
-            "Route not found";
-    
-        send(client_fd, not_found.c_str(), not_found.size(), 0);
+        error404(client_fd);
         return;
     }
     bool headers_injected = false;
@@ -190,7 +209,7 @@ void Server::handle_client(int client_fd){
     
 
     //send response to client
-    std::string response = forward_to_server(route.target, forward_path, raw_data);
+    std::string response = forward_to_server(route.target, forward_path, req);
 
     //parse for status code from application response, eg. 200 OK
     int status_code = get_status_code(response);
@@ -205,6 +224,7 @@ void Server::handle_client(int client_fd){
                         latency, response.size());
 
     send(client_fd, response.c_str(), response.size(), 0);
+    close(client_fd);
 
 }
 

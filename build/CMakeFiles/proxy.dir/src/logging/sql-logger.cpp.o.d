@@ -1000,4 +1000,5 @@ CMakeFiles/proxy.dir/src/logging/sql-logger.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/recursive_directory_iterator.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/u8path.h \
   /opt/homebrew/opt/libpq/include/libpq-fe.h \
-  /opt/homebrew/opt/libpq/include/postgres_ext.h
+  /opt/homebrew/opt/libpq/include/postgres_ext.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/sstream

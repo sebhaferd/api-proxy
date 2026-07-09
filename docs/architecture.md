@@ -11,3 +11,4 @@
 - Send back response to client
 - log request details and latency
 - concurrently handle client requests
+- store log requests in SQL database

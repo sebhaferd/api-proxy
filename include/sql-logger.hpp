@@ -21,6 +21,7 @@ public:
         long latency_ms,
         size_t response_size
     );
+    std::string get_recent_logs_json();
 
 private:
     //initialize connection with postgres db

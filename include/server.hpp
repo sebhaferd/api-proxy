@@ -18,4 +18,6 @@ private:
     void handle_client(int cliend_fd);
     Router router;
     SqlLogger logger;
+    void return_recent_logs(int client_fd);
+    void error404(int client_fd);
 };
