@@ -53,7 +53,7 @@
 - **v0.6:** API key injection
     <details>
     <summary>Details</summary>  
-    Goal: Have proxy handle forwarding API Keys and other important headers
+    Goal: Have proxy handle forwarding API Keys and other important headers<br>
     Store route specific API keys and additional header information in route config<br>
     Inject headers into client HTTP request before forwarding to dest <br>
     </details>
@@ -70,7 +70,7 @@
     </details>
 
 - **v0.8:** SQL request logging
-    </details>
+    <details>
     <summary>Details</summary> 
     Goal: Replace file based logging with database to store log requests <br> 
     Created SQL table storing log data, including request, response size, latency <br>
@@ -81,7 +81,7 @@
     </details>
 
 - **v0.9:** admin logs
-    </details>
+    <details>
     <summary>Details</summary> 
     Implemented admin logs endpoint to return last 10 request logs from database<br>
     Recieve HTTP request from admin -> parse sql table to json output response <br>
