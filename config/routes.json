@@ -2,14 +2,26 @@
 {
     "/example": {
         "host": "example.com",
-        "port": "80"
+        "port": "80",
+        "headers":{
+            "X-API-Key": "test-key-123",
+            "X-Proxy-Name": "api-proxy"
+        }
     },
     "/httpbin": {
         "host": "httpbin.org",
-        "port": "80"
+        "port": "80",
+        "headers":{
+            "X-API-Key": "test-key-123",
+            "X-Proxy-Name": "api-proxy"
+        }
     },
     "/api": {
         "host": "jsonplaceholder.typicode.com",
-        "port": "80"
+        "port": "80",
+        "headers":{
+            "X-API-Key": "test-key-123",
+            "X-Proxy-Name": "api-proxy"
+        }
     }
 }

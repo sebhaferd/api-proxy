@@ -6,18 +6,18 @@
 struct RouteTarget{
     std::string host;
     std::string port;
-    std::string prefix;
 };
 
 struct Route{
     std::string prefix;
     RouteTarget target;
+    std::unordered_map<std::string, std::string> injected_headers;
 };
 
 class Router{
 public:
     Router();
-    bool resolve(const std::string& path, RouteTarget& target) const;
+    bool resolve(const std::string& path, Route& matched_route) const;
 
 private:
     std::vector<Route> json_to_routes(const std::string& file_name);

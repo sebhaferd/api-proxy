@@ -12,6 +12,7 @@
 #include "../../include/server.hpp"
 #include "../../include/http-request.hpp"
 #include "../../include/router.hpp"
+#include "../../include/thread-pool.hpp"
 
 
 Server::Server(int port)
@@ -121,7 +122,13 @@ int get_status_code(const std::string& response){
     }
     return status_code;
 }
+
 void Server::handle_client(int client_fd){
+    //concurrency testing: output client socket ind and current thread
+    std::cout << "client_fd=" << client_fd
+          << " thread=" << std::this_thread::get_id()
+          << std::endl;
+
     //set char buffer for input
     char buffer[4096] = {0};
     //start clock to measure latency
@@ -141,17 +148,9 @@ void Server::handle_client(int client_fd){
     std::string raw_data(buffer, bytes_read);
     HttpRequest req = HttpRequest::parse(raw_data);
 
-    //output request
-    std::cout<<"Method:" << req.method<<"\n";
-    std::cout<<"Path:"<<req.path<<"\n";
-    std::cout<<"Version:"<<req.version<<std::endl;
-    std::cout<<"Headers:"<<std::endl;
-    for (const auto [key, val] : req.headers){
-        std::cout<<key<<": "<<val<<std::endl;
-    }
-    //Get destination for result from router
-    RouteTarget target;
-    if (!router.resolve(req.path, target)){
+    //Get destination for result from router vector
+    Route route;
+    if (!router.resolve(req.path, route)){
         std::string not_found = 
             "HTTP/1.1 404 not found\r\n"
             "Content-Type: text/plain\r\n"
@@ -162,16 +161,36 @@ void Server::handle_client(int client_fd){
         send(client_fd, not_found.c_str(), not_found.size(), 0);
         return;
     }
+    bool headers_injected = false;
+
+    //inject headers from route
+    for (auto& [key, val] : route.injected_headers){
+        req.headers[key] = val;
+        headers_injected = true;
+    }
+    //update host information
+    req.headers["Host"] = route.target.host;
+
+    //output request
+    std::cout<<"Method:" << req.method<<"\n";
+    std::cout<<"Path:"<<req.path<<"\n";
+    std::cout<<"Version:"<<req.version<<std::endl;
+    std::cout<<"Headers:"<<std::endl;
+
+
+    for (const auto [key, val] : req.headers){
+        std::cout<<key<<": "<<val<<std::endl;
+    }
     
     //set forward path to substring after prefix of route target
-    std::string forward_path = req.path.substr(target.prefix.size());
+    std::string forward_path = req.path.substr(route.prefix.size());
     if (forward_path.empty()){
         forward_path = "/";
     }
     
 
     //send response to client
-    std::string response = forward_to_server(target, forward_path, raw_data);
+    std::string response = forward_to_server(route.target, forward_path, raw_data);
 
     //parse for status code from application response, eg. 200 OK
     int status_code = get_status_code(response);
@@ -181,8 +200,8 @@ void Server::handle_client(int client_fd){
     long latency = elapsed.count();
 
     //log request
-    logger.log_request(req.method, req.path, target.host, 
-                        forward_path, status_code, 
+    logger.log_request(req.method, req.path, route.target.host, 
+                        forward_path, status_code, headers_injected, 
                         latency, response.size());
 
     send(client_fd, response.c_str(), response.size(), 0);
@@ -191,7 +210,9 @@ void Server::handle_client(int client_fd){
 
 
 void Server::accept_loop(){
-    //wait for client to connect to port
+    //initialize threadpool to handle clients concurrently
+    ThreadPool pool(4);
+    //wait for client to connect to port annd accept tcp connection
     while (true){
         sockaddr_in client_address{};
         socklen_t address_size = sizeof(client_address);
@@ -200,9 +221,13 @@ void Server::accept_loop(){
             std::cerr<<"Accept failed\n";
             continue;
         }
+
         //handle client request with client socket
-        handle_client(client_fd);
-        close(client_fd);
+        //enq request to task queue for worker threads to handle client
+        //lambda expression to pass server and client socket fd
+        pool.enqueue([this, client_fd](){
+            handle_client(client_fd);
+        });
     }
 }
 

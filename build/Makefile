@@ -249,6 +249,30 @@ src/proxy/server.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/proxy/server.cpp.s
 .PHONY : src/proxy/server.cpp.s
 
+src/proxy/thread-pool.o: src/proxy/thread-pool.cpp.o
+.PHONY : src/proxy/thread-pool.o
+
+# target to build an object file
+src/proxy/thread-pool.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o
+.PHONY : src/proxy/thread-pool.cpp.o
+
+src/proxy/thread-pool.i: src/proxy/thread-pool.cpp.i
+.PHONY : src/proxy/thread-pool.i
+
+# target to preprocess a source file
+src/proxy/thread-pool.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.i
+.PHONY : src/proxy/thread-pool.cpp.i
+
+src/proxy/thread-pool.s: src/proxy/thread-pool.cpp.s
+.PHONY : src/proxy/thread-pool.s
+
+# target to generate assembly for a file
+src/proxy/thread-pool.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.s
+.PHONY : src/proxy/thread-pool.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -273,6 +297,9 @@ help:
 	@echo "... src/proxy/server.o"
 	@echo "... src/proxy/server.i"
 	@echo "... src/proxy/server.s"
+	@echo "... src/proxy/thread-pool.o"
+	@echo "... src/proxy/thread-pool.i"
+	@echo "... src/proxy/thread-pool.s"
 .PHONY : help
 
 

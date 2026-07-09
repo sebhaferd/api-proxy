@@ -2,6 +2,7 @@
 #include <sstream>
 #include "../../include/http-request.hpp"
 
+//Parse client http request and return mathod path version and additional headers
 HttpRequest HttpRequest::parse(const std::string& data){
     HttpRequest req;
 

@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/proxy.dir/src/proxy/router.cpp.o.d"
   "CMakeFiles/proxy.dir/src/proxy/server.cpp.o"
   "CMakeFiles/proxy.dir/src/proxy/server.cpp.o.d"
+  "CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o"
+  "CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o.d"
   "proxy"
   "proxy.pdb"
 )

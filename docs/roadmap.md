@@ -5,6 +5,7 @@
 - **v0.1:** Began with basic HTTP Server
     <details>
     <summary>Details</summary>
+    Goal: Build basic server able to accept TCP connections and parse HTTP requests
     Initialize Server socket <br>
     Listen for TCP connections <br>
     Initialize client socket <br>
@@ -15,6 +16,7 @@
 - **v0.2:** Implemented forward proxy with hardcoded destination
     <details>
     <summary>Details</summary>
+    Goal: Forward between client and destination sockets, Parse requests and responses
     Parse client HTTP request <br>
     Hardcode target port and destination <br>
     Initialize dest socket <br>
@@ -25,29 +27,54 @@
 - **v0.3:** Implemented routing for forward request destinations 
     <details>
     <summary>Details</summary>
+    Goal: Forward request to destination API through proxy
     Implement router storing dest, port, prefix <br>
-    Search router vector using prefix to find destination <br>
+    Resolve destination host and port by matching prefix against configured routes <br>
     Send request to dest and forward back to client <br>
     </details>
+
 - **v0.4:** Implemeted logging into log file
     <details>
     <summary>Details</summary>
-    Measure latency of client interaction <br>
-    Stream log request, response, latency, and status to logging output file <br>
+    Goal: Log requests and relevant information as clients send them to server
+    Measure end to end proxy latency of each client request <br>
+    Write request data, response size, latency, and status to logging output file <br>
     </details>
 
 - **v0.5:** Configuration based routing
     <details>
     <summary>Details</summary>
-    Measure latency of client interaction <br>
-    Stream log request, response, latency, and status to logging output file <br>
-    -Note add CLI feature later
+    Goal: Have routes stored with given prefix to automate routing to destination
+    Wrote a `.json file` to store prefix, host/port pairs <br>
+    Parse JSON configuration into `Router` objects <br>
+    - Note add CLI feature later to update routes config <br>
     </details>
+
 - **v0.6:** API key injection
-- **v0.7:** rate limiting
-- **v0.8:** caching
-- **v0.9:** concurrency/thread pool
-- **v1.0:** SQL logging
+    <details>
+    <summary>Details</summary>  
+    Goal: Have proxy handle forwarding API Keys and other important headers
+    Store route specific API keys and additional header information in route config<br>
+    Inject headers into client HTTP request before forwarding to dest <br>
+    </details>
+
+- **v0.7:** thread pool/concurrency
+    <details>
+    <summary>Details</summary> 
+    Goal: Handle clients concurrently <br> 
+    Implemented fixed size `ThreadPool` to handle shared task queue<br>
+    Main server thread accepts connection from client, enqueues handle_client() to tasks<br>
+    Workers wait on std::condition_variable until available tasks <br>
+    Utilize mutex to lock queue to ensure safe thread access in shared task queue <br>
+    Wake all workers and join each worker thread in destructor <br>
+    </details>
+
+- **v0.8:** SQL logging
+- **v0.9:** simple frontend/dashboard
+- **v1.0:** caching
+- **v1.1:** rate limiting
+- **v1.2:** HTTPS
+
 
 ## Additional version extensions
 

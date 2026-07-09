@@ -9,6 +9,7 @@ void Logger::log_request(
         const std::string& target_host,
         const std::string& forward_path,
         int status_code,
+        bool headers_injected,
         long latency_ms,
         size_t response_size
     ){
@@ -23,6 +24,8 @@ void Logger::log_request(
             target_host << " " <<
             forward_path << " " <<
             "status = " << status_code << 
+            " headers injected: " << 
+            (headers_injected ? "TRUE" : "FALSE") <<
             " latency = " << latency_ms << " ms " <<
             "size = " << response_size<<std::endl;
 }

@@ -13,6 +13,7 @@ public:
         const std::string& target_host,
         const std::string& forward_path,
         int status_code,
+        bool headers_injected,
         long latency_ms,
         size_t response_size
     );
