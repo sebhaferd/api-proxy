@@ -37,7 +37,7 @@ Send request to dest and forward back to client <br>
 ### **v0.4:** Implemeted logging into log file
 <details>
 <summary>Details</summary>
-Goal: Log requests and relevant information as clients send them to server
+Goal: Log requests and relevant information as clients send them to server <br>
 Measure end to end proxy latency of each client request <br>
 Write request data, response size, latency, and status to logging output file <br>
 </details>
@@ -45,7 +45,7 @@ Write request data, response size, latency, and status to logging output file <b
 ### **v0.5:** Configuration based routing
 <details>
 <summary>Details</summary>
-Goal: Have routes stored with given prefix to automate routing to destination
+Goal: Have routes stored with given prefix to automate routing to destination <br>
 Wrote a `.json file` to store prefix, host/port pairs <br>
 Parse JSON configuration into `Router` objects <br>
 - Note add CLI feature later to update routes config <br>
