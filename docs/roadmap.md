@@ -81,7 +81,9 @@
 
 - **v0.9:** admin logs
     <summary>Details</summary> 
-    Implemented admin logs endpoint to return last 10 request logs
+    Implemented admin logs endpoint to return last 10 request logs from database<br>
+    Recieve HTTP request from admin -> parse sql table to json output response <br>
+
     </details>
 
 - **v1.0:** caching
