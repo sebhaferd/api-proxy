@@ -81,16 +81,16 @@ Pass each log request parameter into row as value using placeholder <br>
 Protect shared database writes with `std::mutex` with concurrent worker threads <br>
 </details>
 
-- ### **v0.9:** admin logs
+### **v0.9:** admin logs
 <details>
 <summary>Details</summary> 
 Implemented admin logs endpoint to return last 10 request logs from database<br>
 Recieve HTTP request from admin -> parse sql table to json output response <br>
 </details>
 
-- **v1.0:** caching
-- **v1.1:** rate limiting
-- **v1.2:** HTTPS
+### **v1.0:** caching
+### **v1.1:** rate limiting
+### **v1.2:** HTTPS
 
 
 ## Additional version extensions
