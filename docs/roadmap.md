@@ -2,7 +2,7 @@
 
 ## Standard Progression to API Proxy
 
-- **v0.1:** Began with basic HTTP Server
+#### **v0.1:** Began with basic HTTP Server
     <details>
     <summary>Details</summary>
     Goal: Build basic server able to accept TCP connections and parse HTTP requests
@@ -13,7 +13,7 @@
     Return hardcoded response to client terminal <br>
     </details>
 
-- **v0.2:** Implemented forward proxy with hardcoded destination
+#### **v0.2:** Implemented forward proxy with hardcoded destination
     <details>
     <summary>Details</summary>
     Goal: Forward between client and destination sockets, Parse requests and responses
@@ -24,7 +24,7 @@
     Forward response back to client. <br>
     </details>
 
-- **v0.3:** Implemented routing for forward request destinations 
+#### **v0.3:** Implemented routing for forward request destinations 
     <details>
     <summary>Details</summary>
     Goal: Forward request to destination API through proxy
@@ -33,7 +33,7 @@
     Send request to dest and forward back to client <br>
     </details>
 
-- **v0.4:** Implemeted logging into log file
+#### **v0.4:** Implemeted logging into log file
     <details>
     <summary>Details</summary>
     Goal: Log requests and relevant information as clients send them to server
@@ -41,7 +41,7 @@
     Write request data, response size, latency, and status to logging output file <br>
     </details>
 
-- **v0.5:** Configuration based routing
+#### **v0.5:** Configuration based routing
     <details>
     <summary>Details</summary>
     Goal: Have routes stored with given prefix to automate routing to destination
@@ -50,7 +50,7 @@
     - Note add CLI feature later to update routes config <br>
     </details>
 
-- **v0.6:** API key injection
+#### **v0.6:** API key injection
     <details>
     <summary>Details</summary>  
     Goal: Have proxy handle forwarding API Keys and other important headers<br>
@@ -58,7 +58,7 @@
     Inject headers into client HTTP request before forwarding to dest <br>
     </details>
 
-- **v0.7:** thread pool/concurrency
+#### **v0.7:** thread pool/concurrency
     <details>
     <summary>Details</summary> 
     Goal: Handle clients concurrently <br> 
@@ -69,7 +69,7 @@
     Wake all workers and join each worker thread in destructor <br>
     </details>
 
-- **v0.8:** SQL request logging
+#### **v0.8:** SQL request logging
     <details>
     <summary>Details</summary> 
     Goal: Replace file based logging with database to store log requests <br> 
@@ -80,7 +80,7 @@
     Protect shared database writes with `std::mutex` with concurrent worker threads <br>
     </details>
 
-- **v0.9:** admin logs
+- #### **v0.9:** admin logs
     <details>
     <summary>Details</summary> 
     Implemented admin logs endpoint to return last 10 request logs from database<br>
