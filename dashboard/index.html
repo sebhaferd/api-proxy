@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>API Gateway Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>API Gateway Dashboard</h1>
+
+  <div class="cards">
+    <div class="card">
+      <h2 id="totalRequests">0</h2>
+      <p>Total Requests</p>
+    </div>
+
+    <div class="card">
+      <h2 id="avgLatency">0 μs</h2>
+      <p>Average Latency</p>
+    </div>
+
+    <div class="card">
+      <h2 id="errorCount">0</h2>
+      <p>Errors</p>
+    </div>
+  </div>
+
+  <h2>Recent Requests</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Method</th>
+        <th>Path</th>
+        <th>Target</th>
+        <th>Forward Path</th>
+        <th>Status</th>
+        <th>Headers Injected</th>
+        <th>Latency</th>
+        <th>Size</th>
+      </tr>
+    </thead>
+    <tbody id="logsTable"></tbody>
+  </table>
+
+  <script src="app.js"></script>
+</body>
+</html>

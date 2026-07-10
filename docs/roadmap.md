@@ -1,6 +1,8 @@
 # Code Roadmap:
 
-## Standard Progression to API Proxy
+## Progression on API Proxy Project
+
+## **v0.1-0.9:** HTTP Reverse Proxy
 
 ### **v0.1:** Began with basic HTTP Server
 <details>
@@ -88,9 +90,18 @@ Implemented admin logs endpoint to return last 10 request logs from database<br>
 Recieve HTTP request from admin -> parse sql table to json output response <br>
 </details>
 
-### **v1.0:** caching
-### **v1.1:** rate limiting
-### **v1.2:** HTTPS
+## **v1.0-2.0:** HTTPS API Gateway
+<summary>Details</summary> 
+Generated basic frontend dashboard with java, html, css<br>
+Queries recent logs for admin from sql database and displays<br>
+- simple for now <br>
+</details>
+
+### **v1.0:** basic frontend
+### **v1.1:** caching
+### **v1.2:** rate limiting
+### **v1.3:** Authentication
+### **v1.4:** TlS/HTTPS Support
 
 
 ## Additional version extensions

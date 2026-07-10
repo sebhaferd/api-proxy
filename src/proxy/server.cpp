@@ -86,14 +86,30 @@ std::string forward_to_server(const RouteTarget& target,
         return "";
 
     }
+    
+    
     std::ostringstream request;
-    request << req.method << " " << forward_path << " " << req.version << "\r\n";
+
+    request << req.method << " " << forward_path << " HTTP/1.1\r\n";
+    request << "Host: " << target.host << "\r\n";
+    request << "Connection: close\r\n";
 
     for (const auto& [key, val] : req.headers) {
-        request << key << ": " << val << "\r\n";
+        if (key != "Host" && key != "Connection") {
+            request << key << ": " << val << "\r\n";
+        }
     }
+
+    request << "\r\n";
+
     std::string request_str = request.str();
+
+    std::cout << "FORWARDED REQUEST:\n";
+    std::cout << request_str << std::endl;
+
     send(forward_fd, request_str.c_str(), request_str.size(), 0);
+
+    request << "\r\n";
 
     //recieve response from example.com
     std::string response;
@@ -128,7 +144,7 @@ void Server::return_recent_logs(int client_fd){
         "HTTP/1.1 200 OK\r\n"
         "Content-Type: application/json\r\n"
         "Content-length: " + std::to_string(body.size()) + "\r\n"
-        + body;
+        + "\r\n" + body;
     send(client_fd, response.c_str(), response.size(), 0);
     close(client_fd);
     return;
@@ -210,6 +226,21 @@ void Server::handle_client(int client_fd){
 
     //send response to client
     std::string response = forward_to_server(route.target, forward_path, req);
+
+    if (response.empty()) {
+        std::string body = "Bad Gateway";
+        std::string bad_gateway =
+            "HTTP/1.1 502 Bad Gateway\r\n"
+            "Content-Type: text/plain\r\n"
+            "Content-Length: " + std::to_string(body.size()) + "\r\n"
+            "\r\n" +
+            body;
+
+        send(client_fd, bad_gateway.c_str(), bad_gateway.size(), 0);
+        close(client_fd);
+        return;
+    }
+
 
     //parse for status code from application response, eg. 200 OK
     int status_code = get_status_code(response);
