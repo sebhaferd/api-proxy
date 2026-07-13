@@ -100,7 +100,7 @@ std::string forward_to_server(const RouteTarget& target,
         }
     }
 
-    request << "\r\n";
+    
 
     std::string request_str = request.str();
 
@@ -171,15 +171,17 @@ void Server::handle_client(int client_fd){
     //set char buffer for input
     char buffer[4096] = {0};
     //start clock to measure latency
-    auto start = std::chrono::system_clock::now();
+    auto start = std::chrono::steady_clock::now();
     //read bytes from client socket
     ssize_t bytes_read = recv(client_fd, (void*)buffer, sizeof(buffer)-1, 0);
     if (bytes_read < 0){
         std::cerr<< "recv failed";
+        close(client_fd)
         return;
     }
     if (bytes_read == 0){
         std::cerr<< "Client closed connection";
+        close(client_fd)
         return;
     }
 
@@ -267,14 +269,14 @@ void Server::handle_client(int client_fd){
     //parse for status code from application response, eg. 200 OK
     int status_code = get_status_code(response);
     //measure latency from client request intialization to response 
-    auto end = std::chrono::system_clock::now();
+    auto end = std::chrono::steady_clock::now();
     auto elapsed = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
     long latency = elapsed.count();
 
     //log request
     logger.log_request(req.method, req.path, route.target.host, 
                         forward_path, status_code, headers_injected, 
-                        latency, response.size());
+                        latency, response.size(), hit);
 
     send(client_fd, response.c_str(), response.size(), 0);
     close(client_fd);

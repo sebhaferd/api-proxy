@@ -27,7 +27,7 @@ void SqlLogger::log_request(
         const std::string& forward_path,
         int status_code,
         bool headers_injected,
-        long latency_ms,
+        long latency_us,
         size_t response_size,
         bool cache
     ){
@@ -40,12 +40,12 @@ void SqlLogger::log_request(
         //$1.. used as placeholders for values
         const char* query =
         "INSERT INTO request_logs "
-        "(method, origin_path, target_host, forward_path, status_code, latency_ms, response_sz, headers_injected, cache) "
+        "(method, origin_path, target_host, forward_path, status_code, latency_us, response_sz, headers_injected, cache) "
         "VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9);";
         
         //convert non strings into strings for query
         std::string status = std::to_string(status_code);
-        std::string latency = std::to_string(latency_ms);
+        std::string latency = std::to_string(latency_us);
         std::string size = std::to_string(response_size);
         std::string headers = (headers_injected ? "true" : "false");
         std::string cache_hit = (cache ? "HIT" : "MISS")

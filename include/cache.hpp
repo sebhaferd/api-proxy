@@ -24,13 +24,12 @@ private:
     std::list<std::string> lru_order; // (mru) front -> back (lru)
     std::size_t capacity;
     void insert_entry(CacheEntry& entry);
-    void remove_entry(std::unordered_map<std::list<std::string>::iterator entry_it);
     void evict_lru();
     
 
 public:
     bool get(const std::string& key, std::string& response);
-    void put(const str::string& key, 
+    void put(const std::string& key, 
             const std::string& response
             std::chrono::seconds ttl);
     size_t size();
