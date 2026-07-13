@@ -28,7 +28,8 @@ void SqlLogger::log_request(
         int status_code,
         bool headers_injected,
         long latency_ms,
-        size_t response_size
+        size_t response_size,
+        bool cache
     ){
         //check status of database before logging
         if (PQstatus(conn) != CONNECTION_OK) {
@@ -39,17 +40,18 @@ void SqlLogger::log_request(
         //$1.. used as placeholders for values
         const char* query =
         "INSERT INTO request_logs "
-        "(method, origin_path, target_host, forward_path, status_code, latency_ms, response_sz, headers_injected) "
-        "VALUES ($1, $2, $3, $4, $5, $6, $7, $8);";
+        "(method, origin_path, target_host, forward_path, status_code, latency_ms, response_sz, headers_injected, cache) "
+        "VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9);";
         
         //convert non strings into strings for query
         std::string status = std::to_string(status_code);
         std::string latency = std::to_string(latency_ms);
         std::string size = std::to_string(response_size);
         std::string headers = (headers_injected ? "true" : "false");
+        std::string cache_hit = (cache ? "HIT" : "MISS")
 
         //create string array for input values to query
-        const char* values[8] = {
+        const char* values[9] = {
             method.c_str(),
             origin_path.c_str(),
             target_host.c_str(),
@@ -57,12 +59,13 @@ void SqlLogger::log_request(
             status.c_str(),
             latency.c_str(),
             size.c_str(),
-            headers.c_str()
+            headers.c_str(),
+            cache_hit.c_str()
         };
         //lock mutex for shared db to ensure safety with thread access
         std::lock_guard<std::mutex> lock(db_mutex);
         //insert requestlog and values into db
-        PGresult* res = PQexecParams(conn, query, 8, nullptr, values, nullptr, nullptr, 0);
+        PGresult* res = PQexecParams(conn, query, 9, nullptr, values, nullptr, nullptr, 0);
         if (PQresultStatus(res) != PGRES_COMMAND_OK) {
             std::cerr << "Insert failed: " << PQerrorMessage(conn);
             return;

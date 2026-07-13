@@ -190,6 +190,9 @@ void Server::handle_client(int client_fd){
         return_recent_logs(client_fd);
         return;
     }
+
+    
+
     //Get destination for result from router vector
     Route route;
     if (!router.resolve(req.path, route)){
@@ -205,6 +208,8 @@ void Server::handle_client(int client_fd){
     }
     //update host information
     req.headers["Host"] = route.target.host;
+
+    //Search caches for request
 
     //output request
     std::cout<<"Method:" << req.method<<"\n";
@@ -223,9 +228,26 @@ void Server::handle_client(int client_fd){
         forward_path = "/";
     }
     
+    //get response from backend target
+    std::string cache_key;
+    std::string response;
+    bool hit = false;
+    if (req.method == "GET"){
+        cache_key = req.method + "|" +
+                                req.headers["Host"] + "|" + 
+                                req.path;
+        hit = cache.get(cache_key, response);
+    }
 
-    //send response to client
-    std::string response = forward_to_server(route.target, forward_path, req);
+    if (!hit) {
+
+        response = forward_to_server(route.target, forward_path, req);
+        //no hit but valid response add to cache:
+        if (req.method == "GET" && !response.empty() &&
+                get_status_code(response) == 200){
+            cache.put(cache_key, response, std::chrono::seconds(60));
+        }
+    }
 
     if (response.empty()) {
         std::string body = "Bad Gateway";

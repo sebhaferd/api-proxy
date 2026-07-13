@@ -19,7 +19,8 @@ public:
         int status_code,
         bool headers_injected,
         long latency_ms,
-        size_t response_size
+        size_t response_size,
+        bool cache
     );
     std::string get_recent_logs_json();
 

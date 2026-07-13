@@ -8,5 +8,6 @@ CREATE TABLE IF NOT EXISTS request_logs (
     status_code INTEGER,
     latency_ms INTEGER,
     response_size BIGINT,
-    headers_injected BOOLEAN
+    headers_injected BOOLEAN,
+    hit BOOLEAN
 );
