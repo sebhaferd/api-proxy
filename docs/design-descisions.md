@@ -13,3 +13,5 @@
 #### THREADPOOL tasks: `queue` -> FIFO task structure to handle allocate client requests to worker threads
 #### THREADPOOL queue: `std::mutex` -> lock queue to ensure safe access across multiple threads sharing task queue
 
+#### RESPONSECACHE cache: `std::unordered_map<string, entry>` -> quick look up for cache hits
+

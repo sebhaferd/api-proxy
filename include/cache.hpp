@@ -1,10 +1,11 @@
-#include <iostream>
-#include <unordered_map>
-#include <string>
+#pragma once
+
 #include <chrono>
-#include <mutex>
-#include <list>
 #include <cstddef>
+#include <list>
+#include <mutex>
+#include <string>
+#include <unordered_map>
 
 struct CacheEntry{
     std::string response;
@@ -17,7 +18,7 @@ struct CacheEntry{
 
 class ResponseCache{
 private:
-    explicit ResponseCache();
+    explicit ResponseCache(std::size_t capacity);
     std::unordered_map<std::string, CacheEntry> entries;
     std::mutex cache_mutex;
     std::list<std::string> lru_order; // (mru) front -> back (lru)

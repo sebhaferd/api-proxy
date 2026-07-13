@@ -86,22 +86,34 @@ Protect shared database writes with `std::mutex` with concurrent worker threads 
 ### **v0.9:** admin logs
 <details>
 <summary>Details</summary> 
+Goal: Implement way to view recent responses as server admin <br>
 Implemented admin logs endpoint to return last 10 request logs from database<br>
 Recieve HTTP request from admin -> parse sql table to json output response <br>
 </details>
 
 ## **v1.0-2.0:** HTTPS API Gateway
+
+
+### **v1.0:** basic frontend
+<details>
 <summary>Details</summary> 
 Generated basic frontend dashboard with java, html, css<br>
 Queries recent logs for admin from sql database and displays<br>
 - simple for now <br>
 </details>
 
-### **v1.0:** basic frontend
 ### **v1.1:** caching
-### **v1.2:** rate limiting
+<details>
+<summary>Details</summary>
+Goal: Reduce forwarding responses and improve latency using caching <br>
+Implemented in memory response cache for `GET` requests<br>
+Added TTL expiration for cache responses <br>
+Added cache capacity lru eviction for least used entries using `std::list` <br>
+</details>
+
+### **v1.2:** TlS/HTTPS Support
 ### **v1.3:** Authentication
-### **v1.4:** TlS/HTTPS Support
+### **v1.4:** rate limiting
 
 
 ## Additional version extensions

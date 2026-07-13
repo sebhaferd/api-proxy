@@ -16,7 +16,7 @@
 
 
 Server::Server(int port)
-    : port(port), server_fd(-1), logger() {}
+    : port(port), server_fd(-1), logger() {}, ResponseCache(100)
 
 void Server::start(){
     if (!setup_socket()){

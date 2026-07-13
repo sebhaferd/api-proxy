@@ -12,3 +12,4 @@
 - log request details and latency
 - concurrently handle client requests
 - store log requests in SQL database
+- lru eviction caching using in memory cache
