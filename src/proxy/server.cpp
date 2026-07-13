@@ -8,6 +8,9 @@
 #include <chrono>
 #include <string>
 #include <sstream>
+#include <openssl/err.h>
+#include <openssl/ssl.h>
+
 
 #include "../../include/server.hpp"
 #include "../../include/http-request.hpp"
@@ -16,7 +19,7 @@
 
 
 Server::Server(int port)
-    : port(port), server_fd(-1), logger() {}, ResponseCache(100)
+    : port(port), server_fd(-1), logger() {}, ResponseCache(100), ssl_context(nullptr)
 
 void Server::start(){
     if (!setup_socket()){
@@ -24,6 +27,15 @@ void Server::start(){
         return;
     }
     accept_loop();
+}
+
+Server::~Server(){
+    if (ssl_context != nullptr){
+        SSL_CTX_FREE(ssl_context);
+    }
+    if (server_fd != -1){
+        close(server_fd);
+    }
 }
 
 bool Server::setup_socket(){
@@ -50,6 +62,63 @@ bool Server::setup_socket(){
     }
     std::cout<<"Listening on port"<< port <<std::endl;
     return true;
+}
+
+bool Server::setup_tls(
+        const std::string& certificate_path,
+        const std::string& private_key_path){
+    ssl_context = SSL_CTX_new(TLS_server_method());
+
+    //import certificate and private key to ssl ctx from input files
+    SSL_CTX_use_certificate_file(ssl_context, certificate_path, SSL_FILETYPE_PEM);
+    SSL_CTX_use_PrivateKey_file(ssl_context, private_key_path, SSL_FILETYPE_PEM);
+
+    //ensure tls is configured correctly with version, certificate and private key
+    if (ssl_context == nullptr){
+        std::cerr<<"Failed to start tls context";
+        ERR_print_errors_fp(stderr);
+        return false;
+    }
+    if (
+        SSL_CTX_set_min_proto_version(
+            ssl_context,
+            TLS1_2_VERSION
+        ) != 1
+    ) {
+        std::cerr << "Failed to set minimum TLS version\n";
+        ERR_print_errors_fp(stderr);
+        return false;
+    }
+
+    if (
+        SSL_CTX_use_certificate_chain_file(
+            ssl_context,
+            certificate_path.c_str()
+        ) != 1
+    ) {
+        std::cerr << "Failed to load certificate\n";
+        ERR_print_errors_fp(stderr);
+        return false;
+    }
+    if (
+        SSL_CTX_use_PrivateKey_file(
+            ssl_context,
+            private_key_path.c_str(),
+            SSL_FILETYPE_PEM
+        ) != 1
+    ) {
+        std::cerr << "Failed to load private key\n";
+        ERR_print_errors_fp(stderr);
+        return false;
+    }
+
+    if (SSL_CTX_check_private_key(ssl_context) != 1) {
+        std::cerr << "Certificate and private key do not match\n";
+        ERR_print_errors_fp(stderr);
+        return false;
+    }
+    return true;
+
 }
 
 //forward http request to server

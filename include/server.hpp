@@ -2,19 +2,26 @@
 #include "router.hpp"
 #include "sql-logger.hpp"
 #include "cache.hpp"
+#include <openssl/ssl.h>
+
 
 
 
 class Server{
 public:
     explicit Server(int port);
+    ~Server();
     void start();
 
 private:
     int port;
     int server_fd;
+    SSL_CTX *ssl_context;
 
     bool setup_socket();
+    bool setup_tls(
+        const std::string& certificate_path,
+        const std::string& private_key_path)
     void accept_loop();
     void handle_client(int cliend_fd);
     Router router;
