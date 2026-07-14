@@ -19,19 +19,27 @@
 
 
 Server::Server(int port)
-    : port(port), server_fd(-1), logger() {}, ResponseCache(100), ssl_context(nullptr)
+    : port(port), server_fd(-1), logger() {}, ResponseCache(100), ssl_context(nullptr), forward_context(nullptr){
+
+    }
 
 void Server::start(){
     if (!setup_socket()){
         std::cerr<<"Server setup failed"<<std::endl;
         return;
     }
+    setup_tls("certs/server-cert.pem",
+    "certs/server-key.pem");
+    setup_forward_ssl();
     accept_loop();
 }
 
 Server::~Server(){
     if (ssl_context != nullptr){
-        SSL_CTX_FREE(ssl_context);
+        SSL_CTX_free(ssl_context);
+    }
+    if (forward_context != nullptr){
+        SSL_CTX_free(forward_context);
     }
     if (server_fd != -1){
         close(server_fd);
@@ -121,8 +129,38 @@ bool Server::setup_tls(
 
 }
 
+//use SSL_write to send data to ssl destination
+bool ssl_send(SSL *ssl, const std::string& data){
+    std::size_t total_written = 0;
+    while (total_written < data.size()){
+        int written = SSL_write(ssl, data.data() + total_written, static_cast<int>(data.size()-total_written));
+        if (written < 0){
+            int ssl_error = SSL_get_error(ssl, written);
+            std::cerr<<"Failed to write ssl data";
+
+            return false;
+        }
+        total_written += static_cast<std::size_t>(written);
+    }
+    return true;
+}
+
+bool Server::setup_forward_ssl(){
+    forward_context = SSL_CTX_new(TLS_client_method());
+    //enable certificate verification
+    SSL_CTX_set_verify(forward_context, SSL_VERIFY_PEER, nullptr);
+
+    if (SSL_CTX_set_default_verify_paths(forward_context) != 1){
+        std::cerr<<"failed to load OS CA certificates";
+        ERR_print_errors_fp(stderr);
+        SSL_CTX_free(forward_context);
+        forward_context = nullptr;
+        return false;
+    }
+    return true;
+}
 //forward http request to server
-std::string forward_to_server(const RouteTarget& target, 
+std::string Server::forward_to_server(const RouteTarget& target, 
         const std::string& forward_path,
         HttpRequest& req){
     //temp hardcoded destination
@@ -151,11 +189,34 @@ std::string forward_to_server(const RouteTarget& target,
         std::cerr<<"connect failed"<<std::endl;
         freeaddrinfo(result);
         close(forward_fd);
-
         return "";
-
     }
-    
+
+    //generate ssl object to encrypt upstream requests
+    SSL *forward_ssl = SSL_new(forward_context);
+    if (forward_ssl == nullptr){
+        std::cerr<<"failed to create forwarding ssl connection"
+        ERR_print_errors_fp(stderr);
+        close(forward_fd);
+        return "";
+    }
+
+    //attatch forward socket to ssl
+    if (SSL_set_fd(forward_ssl, forward_fd) != 1){
+        std::cerr<<"failed to attatch foward socket to ssl";
+        ERR_print_errors_fp(stderr);
+        SSL_free(forward_ssl);
+        close(forward_fd);
+        return "";
+    }
+    SSL_set_tlsext_host_name(forward_ssl, target.host.c_str());  
+    SSL_set1_host(forward_ssl, target.host.c_str());
+    if (SSL_connect(forward_ssl) != 1) {
+        ERR_print_errors_fp(stderr);
+        SSL_free(forward_ssl);
+        close(forward_fd);
+        return "";
+    }
     
     std::ostringstream request;
 
@@ -176,7 +237,7 @@ std::string forward_to_server(const RouteTarget& target,
     std::cout << "FORWARDED REQUEST:\n";
     std::cout << request_str << std::endl;
 
-    send(forward_fd, request_str.c_str(), request_str.size(), 0);
+    ssl_send(forward_ssl, request_str.c_str());
 
     request << "\r\n";
 
@@ -184,12 +245,14 @@ std::string forward_to_server(const RouteTarget& target,
     std::string response;
     char buffer[4096];
     ssize_t bytes_recieved;
-    while ((bytes_recieved = recv(forward_fd, buffer, sizeof(buffer), 0)) > 0){
+    while ((bytes_recieved = SSL_read(forward_ssl, buffer, sizeof(buffer))) > 0){
         response.append(buffer, bytes_recieved);
     }
 
     //free addrinfo ptr and close socket
     freeaddrinfo(result);
+    SSL_shutdown(forward_ssl);
+    SSL_free(forward_ssl);
     close(forward_fd);
     return response;
     
@@ -207,19 +270,21 @@ int get_status_code(const std::string& response){
     return status_code;
 }
 
-void Server::return_recent_logs(int client_fd){
+
+
+void Server::return_recent_logs(SSL* client_ssl){
     std::string body = logger.get_recent_logs_json();
     std::string response = 
         "HTTP/1.1 200 OK\r\n"
         "Content-Type: application/json\r\n"
         "Content-length: " + std::to_string(body.size()) + "\r\n"
         + "\r\n" + body;
-    send(client_fd, response.c_str(), response.size(), 0);
+    ssl_send(client_ssl, response.c_str());
     close(client_fd);
     return;
 }
 
-void Server::error404(int client_fd){
+void Server::error404(SSL* client_ssl){
     std::string body = "Route not found";
     std::string not_found = 
         "HTTP/1.1 404 not found\r\n"
@@ -228,10 +293,38 @@ void Server::error404(int client_fd){
         "\r\n"
         + body;
     
-    send(client_fd, not_found.c_str(), not_found.size(), 0);
+    ssl_send(client_ssl, not_found.c_str());
     close(client_fd);
 }
+
+
 void Server::handle_client(int client_fd){
+    //Create ssl for client using server ssl context
+    SSL* client_ssl = SSL_new(ssl_context);
+    if (client_ssl == nullptr){
+        std::cerr<<"Failed to create client ssl";
+        ERR_print_errors_fp(stderr);
+        close(client_fd);
+        return;
+    }
+    //attatch client socket to created ssl
+    if (SSL_set_fd(client_ssl, client_fd) != 1){
+        std::cerr<<"Failed to attatch client socket to ssl";
+        ERR_print_errors_fp(stderr);
+        SSL_free(client_ssl);
+        close(client_fd);
+        return;
+    }
+    //perform tls handshake with client and check if completed before parsing http req
+    int handshake_res = SSL_accept(client_ssl);
+    if (handshake_res <= 0){
+        int ssl_error = SSL_get_error(client_ssl, handshake_res);
+        std::cerr<<"ssl handshake failed";
+        ERR_print_errors_fp(stderr);
+        SSL_free(client_ssl);
+        close(client_fd);
+    }
+
     //concurrency testing: output client socket ind and current thread
     std::cout << "client_fd=" << client_fd
           << " thread=" << std::this_thread::get_id()
@@ -242,14 +335,18 @@ void Server::handle_client(int client_fd){
     //start clock to measure latency
     auto start = std::chrono::steady_clock::now();
     //read bytes from client socket
-    ssize_t bytes_read = recv(client_fd, (void*)buffer, sizeof(buffer)-1, 0);
+    ssize_t bytes_read = SSL_read(client_ssl, (void*)buffer, sizeof(buffer)-1);
     if (bytes_read < 0){
+        int ssl_error = SSL_get_error(client_ssl, bytes_read);
         std::cerr<< "recv failed";
+        SSL_free(client_ssl);
         close(client_fd)
         return;
     }
     if (bytes_read == 0){
         std::cerr<< "Client closed connection";
+        int ssl_error = SSL_get_error(client_ssl, bytes_read);
+        SSL_free(client_ssl);
         close(client_fd)
         return;
     }
@@ -258,7 +355,7 @@ void Server::handle_client(int client_fd){
     std::string raw_data(buffer, bytes_read);
     HttpRequest req = HttpRequest::parse(raw_data);
     if (req.path == "/admin/logs"){
-        return_recent_logs(client_fd);
+        return_recent_logs(client_ssl);
         return;
     }
 
@@ -267,7 +364,7 @@ void Server::handle_client(int client_fd){
     //Get destination for result from router vector
     Route route;
     if (!router.resolve(req.path, route)){
-        error404(client_fd);
+        error404(client_ssl);
         return;
     }
     bool headers_injected = false;
@@ -329,7 +426,9 @@ void Server::handle_client(int client_fd){
             "\r\n" +
             body;
 
-        send(client_fd, bad_gateway.c_str(), bad_gateway.size(), 0);
+        ssl_send(client_ssl, bad_gateway.c_str());
+        SSL_shutdown(client_ssl);
+        SSL_free(client_ssl);
         close(client_fd);
         return;
     }
@@ -347,7 +446,9 @@ void Server::handle_client(int client_fd){
                         forward_path, status_code, headers_injected, 
                         latency, response.size(), hit);
 
-    send(client_fd, response.c_str(), response.size(), 0);
+    ssl_send(client_ssl, response.c_str());
+    SSL_shutdown(client_ssl);
+    SSL_free(client_ssl);
     close(client_fd);
 
 }
