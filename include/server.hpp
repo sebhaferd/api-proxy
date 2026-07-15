@@ -33,6 +33,7 @@ private:
     Router router;
     SqlLogger logger;
     ResponseCache cache;
+    RateLimiter limiter;
     void return_recent_logs(int client_fd);
     void error404(int client_fd);
 };

@@ -112,6 +112,15 @@ Added cache capacity lru eviction for least used entries using `std::list` <br>
 </details>
 
 ### **v1.2:** TlS/HTTPS Support
+<details>
+<summary>Details</summary>
+Goal: Secure communication between client, proxy, and backend servers <br>
+Integrated openssl to provide TLS encryption for client and upstream connections <br>
+Perform TLS handshakes using SSL_accept() and SSL_connect() when forming connections with client and upstream <br>
+Wrap sockets with SSL objects and convert send and recv requests to SSL_read and SSL_write <br>
+Use server private key and certificates <br>
+</details>
+
 ### **v1.3:** Authentication
 ### **v1.4:** rate limiting
 

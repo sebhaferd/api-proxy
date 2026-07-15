@@ -19,7 +19,9 @@
 
 
 Server::Server(int port)
-    : port(port), server_fd(-1), logger() {}, ResponseCache(100), ssl_context(nullptr), forward_context(nullptr){
+    : port(port), server_fd(-1), logger() {}, 
+    ResponseCache(100), ssl_context(nullptr), 
+    forward_context(nullptr), RateLimiter(10, 2){
 
     }
 
@@ -298,7 +300,7 @@ void Server::error404(SSL* client_ssl){
 }
 
 
-void Server::handle_client(int client_fd){
+void Server::handle_client(int client_fd, const std::string& client_ip){    
     //Create ssl for client using server ssl context
     SSL* client_ssl = SSL_new(ssl_context);
     if (client_ssl == nullptr){
@@ -325,6 +327,28 @@ void Server::handle_client(int client_fd){
         close(client_fd);
     }
 
+    //check rate limiter to allow client to request
+
+    if (!limiter.allow(client_ip)){
+        std::string body = "Rate limit exceeded";
+        std::string response =
+            "HTTP/1.1 429 Too Many Requests\r\n"
+            "Content-Type: text/plain\r\n"
+            "Content-Length: " +
+            std::to_string(body.size()) +
+            "\r\n"
+            "Retry-After: 1\r\n"
+            "Connection: close\r\n"
+            "\r\n" +
+            body;
+
+        ssl_send(client_ssl, response);
+
+        SSL_shutdown(client_ssl);
+        SSL_free(client_ssl);
+        close(client_fd);
+        return;
+    }
     //concurrency testing: output client socket ind and current thread
     std::cout << "client_fd=" << client_fd
           << " thread=" << std::this_thread::get_id()
@@ -466,12 +490,21 @@ void Server::accept_loop(){
             std::cerr<<"Accept failed\n";
             continue;
         }
+        //get client ip address for rate limiting
+        char ip_buffer[INET_ADDRSTRLEN];
+        const char* ip_result = inet_ntop(
+            AF_INET,
+            &client_address.sin_addr,
+            ip_buffer,
+            sizeof(ip_buffer)
+        );
+        std::string client_ip = ip_result != nullptr ? ip_buffer : "unknown";
 
         //handle client request with client socket
         //enq request to task queue for worker threads to handle client
         //lambda expression to pass server and client socket fd
         pool.enqueue([this, client_fd](){
-            handle_client(client_fd);
+            handle_client(client_fd, client_ip);
         });
     }
 }
