@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/proxy.dir/src/caching/cache.cpp.o"
+  "CMakeFiles/proxy.dir/src/caching/cache.cpp.o.d"
   "CMakeFiles/proxy.dir/src/logging/logger.cpp.o"
   "CMakeFiles/proxy.dir/src/logging/logger.cpp.o.d"
   "CMakeFiles/proxy.dir/src/logging/sql-logger.cpp.o"
@@ -13,6 +15,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/proxy.dir/src/proxy/server.cpp.o.d"
   "CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o"
   "CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o.d"
+  "CMakeFiles/proxy.dir/src/rate-limiting/rate-limiter.cpp.o"
+  "CMakeFiles/proxy.dir/src/rate-limiting/rate-limiter.cpp.o.d"
   "proxy"
   "proxy.pdb"
 )

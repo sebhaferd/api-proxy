@@ -85,12 +85,12 @@ clean: CMakeFiles/proxy.dir/clean
 CMakeFiles/proxy.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/sebihaferd/Projects/api-proxy/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target proxy"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/sebihaferd/Projects/api-proxy/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10 "Built target proxy"
 .PHONY : CMakeFiles/proxy.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/proxy.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/sebihaferd/Projects/api-proxy/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/sebihaferd/Projects/api-proxy/build/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/proxy.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/sebihaferd/Projects/api-proxy/build/CMakeFiles 0
 .PHONY : CMakeFiles/proxy.dir/rule
@@ -102,7 +102,7 @@ proxy: CMakeFiles/proxy.dir/rule
 # codegen rule for target.
 CMakeFiles/proxy.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/sebihaferd/Projects/api-proxy/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Finished codegen for target proxy"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/sebihaferd/Projects/api-proxy/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10 "Finished codegen for target proxy"
 .PHONY : CMakeFiles/proxy.dir/codegen
 
 # clean rule for target.

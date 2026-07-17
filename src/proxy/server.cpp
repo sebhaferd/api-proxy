@@ -21,8 +21,8 @@
 Server::Server(int port)
     : port(port), server_fd(-1), logger() {}, 
     ResponseCache(100), ssl_context(nullptr), 
-    forward_context(nullptr), RateLimiter(10, 2){
-
+    forward_context(nullptr), RateLimiter(10, 2)
+    {
     }
 
 void Server::start(){

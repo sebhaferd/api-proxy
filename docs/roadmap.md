@@ -121,8 +121,16 @@ Wrap sockets with SSL objects and convert send and recv requests to SSL_read and
 Use server private key and certificates <br>
 </details>
 
-### **v1.3:** Authentication
-### **v1.4:** rate limiting
+### **v1.3:** Rate Limiting
+<details>
+<summary>Details</summary>
+Goal: Protect services from excessive request traffic <br>
+Implemented client ip based token bucket limiter using std::unordered map<br>
+Refill tokens to capacity using most recent refill and refill rate<br>
+Maintin thread safety access of bucket map using std::mutex<br>
+</details>
+
+### **v1.4:** Authentication
 
 
 ## Additional version extensions

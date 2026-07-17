@@ -1029,6 +1029,77 @@ CMakeFiles/proxy.dir/src/proxy/server.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__charconv/from_chars_result.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__charconv/from_chars_integral.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__charconv/to_chars.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/err.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/macros.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/opensslconf.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/configuration.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/opensslv.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/e_os2.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/types.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/safestack.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/stack.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/bio.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/crypto.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/cryptoerr.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/symhacks.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/cryptoerr_legacy.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/core.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/bioerr.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/lhash.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/ssl.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/e_ostime.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/time.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_timeval64.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/comp.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/comperr.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/x509.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/buffer.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/buffererr.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/evp.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/core_dispatch.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/indicator.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/params.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/bn.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/bnerr.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/evperr.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/objects.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/obj_mac.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/asn1.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/asn1err.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/objectserr.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/ec.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/ecerr.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/rsa.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/rsaerr.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/dsa.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/dh.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/dherr.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/dsaerr.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/sha.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/x509err.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/x509_vfy.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/pkcs7.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/pkcs7err.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/http.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/conf.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/conferr.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/conftypes.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/pem.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/pemerr.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/hmac.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/async.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/asyncerr.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/ct.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/cterr.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/sslerr.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/sslerr_legacy.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/prov_ssl.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/ssl2.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/ssl3.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/tls1.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/dtls1.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/srtp.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/quic.h \
   /Users/sebihaferd/Projects/api-proxy/src/proxy/../../include/server.hpp \
   /Users/sebihaferd/Projects/api-proxy/src/proxy/../../include/router.hpp \
   /Users/sebihaferd/Projects/api-proxy/src/proxy/../../include/sql-logger.hpp \
@@ -1053,6 +1124,8 @@ CMakeFiles/proxy.dir/src/proxy/server.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/u8path.h \
   /opt/homebrew/opt/libpq/include/libpq-fe.h \
   /opt/homebrew/opt/libpq/include/postgres_ext.h \
+  /Users/sebihaferd/Projects/api-proxy/src/proxy/../../include/cache.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/list \
   /Users/sebihaferd/Projects/api-proxy/src/proxy/../../include/http-request.hpp \
   /Users/sebihaferd/Projects/api-proxy/src/proxy/../../include/thread-pool.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/thread \

@@ -22,7 +22,7 @@ private:
     bool setup_socket();
     bool setup_tls(
         const std::string& certificate_path,
-        const std::string& private_key_path)
+        const std::string& private_key_path);
 
     bool setup_forward_ssl();
     void accept_loop();

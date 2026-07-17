@@ -5921,6 +5921,7 @@ CMakeFiles/proxy.dir/src/proxy/server.cpp.o: /Users/sebihaferd/Projects/api-prox
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/istream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iterator \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/limits \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/list \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/locale \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/memory \
@@ -6058,6 +6059,7 @@ CMakeFiles/proxy.dir/src/proxy/server.cpp.o: /Users/sebihaferd/Projects/api-prox
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_time_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_timespec.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_timeval.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_timeval64.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_char.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int16_t.h \
@@ -6084,6 +6086,7 @@ CMakeFiles/proxy.dir/src/proxy/server.cpp.o: /Users/sebihaferd/Projects/api-prox
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/socket.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/stdio.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/syslimits.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/time.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/unistd.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/wait.h \
@@ -6120,11 +6123,81 @@ CMakeFiles/proxy.dir/src/proxy/server.cpp.o: /Users/sebihaferd/Projects/api-prox
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/21/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/21/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/21/include/stdint.h \
+  /Users/sebihaferd/Projects/api-proxy/include/cache.hpp \
   /Users/sebihaferd/Projects/api-proxy/include/http-request.hpp \
   /Users/sebihaferd/Projects/api-proxy/include/router.hpp \
   /Users/sebihaferd/Projects/api-proxy/include/server.hpp \
   /Users/sebihaferd/Projects/api-proxy/include/sql-logger.hpp \
   /Users/sebihaferd/Projects/api-proxy/include/thread-pool.hpp \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/asn1.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/asn1err.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/async.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/asyncerr.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/bio.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/bioerr.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/bn.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/bnerr.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/buffer.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/buffererr.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/comp.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/comperr.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/conf.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/conferr.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/configuration.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/conftypes.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/core.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/core_dispatch.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/crypto.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/cryptoerr.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/cryptoerr_legacy.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/ct.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/cterr.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/dh.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/dherr.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/dsa.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/dsaerr.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/dtls1.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/e_os2.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/e_ostime.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/ec.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/ecerr.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/err.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/evp.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/evperr.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/hmac.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/http.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/indicator.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/lhash.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/macros.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/obj_mac.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/objects.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/objectserr.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/opensslconf.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/opensslv.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/params.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/pem.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/pemerr.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/pkcs7.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/pkcs7err.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/prov_ssl.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/quic.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/rsa.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/rsaerr.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/safestack.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/sha.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/srtp.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/ssl.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/ssl2.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/ssl3.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/sslerr.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/sslerr_legacy.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/stack.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/symhacks.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/tls1.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/types.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/x509.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/x509_vfy.h \
+  /opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/x509err.h \
   /opt/homebrew/opt/libpq/include/libpq-fe.h \
   /opt/homebrew/opt/libpq/include/postgres_ext.h
 
@@ -7125,13 +7198,103 @@ CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o: /Users/sebihaferd/Projects/api
 
 /Users/sebihaferd/Projects/api-proxy/src/proxy/thread-pool.cpp:
 
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/x509err.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/x509_vfy.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/x509.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/types.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/tls1.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/ssl3.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/ssl2.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/ssl.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/rsaerr.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/quic.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/pkcs7.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/pemerr.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/params.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/opensslconf.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/objectserr.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/objects.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/obj_mac.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/lhash.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/http.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/err.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/ec.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/e_os2.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/dtls1.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/dsaerr.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/dherr.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/dh.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/cterr.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/ct.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/cryptoerr_legacy.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/cryptoerr.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/crypto.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/core_dispatch.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/conftypes.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/conferr.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/comperr.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/buffererr.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/sslerr_legacy.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/bnerr.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/bn.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/bio.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/asyncerr.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/asn1.h:
+
 /Users/sebihaferd/Projects/api-proxy/include/thread-pool.hpp:
 
+/Users/sebihaferd/Projects/api-proxy/include/cache.hpp:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/unistd.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/time.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/socket.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_uuid_t.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_timeval64.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_socklen_t.h:
 
@@ -7140,6 +7303,8 @@ CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o: /Users/sebihaferd/Projects/api
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_iovec_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_select.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/pem.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/netinet6/in6.h:
 
@@ -7150,6 +7315,8 @@ CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o: /Users/sebihaferd/Projects/api
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_posix_vdisable.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/_param.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/list:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/chrono:
 
@@ -7198,6 +7365,8 @@ CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o: /Users/sebihaferd/Projects/api
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/zoned_time.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cassert:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/rsa.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/any:
 
@@ -7425,11 +7594,15 @@ CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o: /Users/sebihaferd/Projects/api
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_blksize_t.h:
 
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/asn1err.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_blkcnt_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_symbol_aliasing.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/hmac.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/wait.h:
 
@@ -7705,6 +7878,8 @@ CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o: /Users/sebihaferd/Projects/api
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_volatile.h:
 
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/evp.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_void.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_valid_expansion.h:
@@ -7718,6 +7893,8 @@ CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o: /Users/sebihaferd/Projects/api
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_trivially_copyable.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_trivially_assignable.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/sslerr.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_trivial.h:
 
@@ -7741,11 +7918,15 @@ CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o: /Users/sebihaferd/Projects/api
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_reference_wrapper.h:
 
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/bioerr.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_replace.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_reference.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_primary_template.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/safestack.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_types/_wctrans_t.h:
 
@@ -7919,6 +8100,8 @@ CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o: /Users/sebihaferd/Projects/api
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_equality_comparable.h:
 
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/evperr.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/log2.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/is_valid.h:
@@ -8041,6 +8224,8 @@ CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o: /Users/sebihaferd/Projects/api
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__math/traits.h:
 
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/pkcs7err.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/destroy.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__math/special_functions.h:
@@ -8068,6 +8253,8 @@ CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o: /Users/sebihaferd/Projects/api
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__math/fma.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__tuple/tuple_like_ext.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/async.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_aggregate.h:
 
@@ -8157,6 +8344,8 @@ CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o: /Users/sebihaferd/Projects/api
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_unqualified.h:
 
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/indicator.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_rotate_copy.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__bit/bit_width.h:
@@ -8210,6 +8399,8 @@ CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o: /Users/sebihaferd/Projects/api
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_wchar.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/nat.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/opensslv.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/replace_if.h:
 
@@ -8367,6 +8558,8 @@ CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o: /Users/sebihaferd/Projects/api
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/operations.h:
 
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/symhacks.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/container_compatible_range.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/concepts:
@@ -8457,7 +8650,11 @@ CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o: /Users/sebihaferd/Projects/api
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/invoke.h:
 
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/macros.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__config:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/sha.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_make_heap.h:
 
@@ -8578,6 +8775,8 @@ CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o: /Users/sebihaferd/Projects/api
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__compare/common_comparison_category.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/formatter_output.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/core.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_copy_if.h:
 
@@ -8799,7 +8998,11 @@ CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o: /Users/sebihaferd/Projects/api
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/projected.h:
 
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/conf.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/set_union.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/dsa.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/unique_temporary_buffer.h:
 
@@ -9149,6 +9352,8 @@ CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o: /Users/sebihaferd/Projects/api
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__ranges/view_interface.h:
 
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/comp.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/distance.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/parser_std_format_spec.h:
@@ -9156,6 +9361,8 @@ CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o: /Users/sebihaferd/Projects/api
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_sigaltstack.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/in_in_out_result.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/ecerr.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/in_out_out_result.h:
 
@@ -9179,6 +9386,8 @@ CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o: /Users/sebihaferd/Projects/api
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_merge.h:
 
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/srtp.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_mb_cur_max.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/wctype.h:
@@ -9196,6 +9405,8 @@ CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o: /Users/sebihaferd/Projects/api
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/format.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/for_each.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/e_ostime.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/copy.h:
 
@@ -9230,6 +9441,8 @@ CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o: /Users/sebihaferd/Projects/api
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/comp.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_enum.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/configuration.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/in_in_result.h:
 
@@ -9313,6 +9526,8 @@ CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o: /Users/sebihaferd/Projects/api
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__math/hyperbolic_functions.h:
 
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/prov_ssl.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/memory:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/pointer_to_binary_function.h:
@@ -9332,6 +9547,8 @@ CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o: /Users/sebihaferd/Projects/api
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_convertible.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/add_cv_quals.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/stack.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/replace_copy.h:
 
@@ -9390,6 +9607,8 @@ CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o: /Users/sebihaferd/Projects/api
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/as_lvalue.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_move_backward.h:
+
+/opt/homebrew/Cellar/openssl@3/3.6.3/include/openssl/buffer.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/___wctype.h:
 

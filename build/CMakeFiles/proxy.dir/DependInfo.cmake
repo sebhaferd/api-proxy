@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/sebihaferd/Projects/api-proxy/src/caching/cache.cpp" "CMakeFiles/proxy.dir/src/caching/cache.cpp.o" "gcc" "CMakeFiles/proxy.dir/src/caching/cache.cpp.o.d"
   "/Users/sebihaferd/Projects/api-proxy/src/logging/logger.cpp" "CMakeFiles/proxy.dir/src/logging/logger.cpp.o" "gcc" "CMakeFiles/proxy.dir/src/logging/logger.cpp.o.d"
   "/Users/sebihaferd/Projects/api-proxy/src/logging/sql-logger.cpp" "CMakeFiles/proxy.dir/src/logging/sql-logger.cpp.o" "gcc" "CMakeFiles/proxy.dir/src/logging/sql-logger.cpp.o.d"
   "/Users/sebihaferd/Projects/api-proxy/src/main.cpp" "CMakeFiles/proxy.dir/src/main.cpp.o" "gcc" "CMakeFiles/proxy.dir/src/main.cpp.o.d"
@@ -15,6 +16,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/sebihaferd/Projects/api-proxy/src/proxy/router.cpp" "CMakeFiles/proxy.dir/src/proxy/router.cpp.o" "gcc" "CMakeFiles/proxy.dir/src/proxy/router.cpp.o.d"
   "/Users/sebihaferd/Projects/api-proxy/src/proxy/server.cpp" "CMakeFiles/proxy.dir/src/proxy/server.cpp.o" "gcc" "CMakeFiles/proxy.dir/src/proxy/server.cpp.o.d"
   "/Users/sebihaferd/Projects/api-proxy/src/proxy/thread-pool.cpp" "CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o" "gcc" "CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.o.d"
+  "/Users/sebihaferd/Projects/api-proxy/src/rate-limiting/rate-limiter.cpp" "CMakeFiles/proxy.dir/src/rate-limiting/rate-limiter.cpp.o" "gcc" "CMakeFiles/proxy.dir/src/rate-limiting/rate-limiter.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

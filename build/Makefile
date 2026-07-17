@@ -129,6 +129,30 @@ proxy/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/build
 .PHONY : proxy/fast
 
+src/caching/cache.o: src/caching/cache.cpp.o
+.PHONY : src/caching/cache.o
+
+# target to build an object file
+src/caching/cache.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/caching/cache.cpp.o
+.PHONY : src/caching/cache.cpp.o
+
+src/caching/cache.i: src/caching/cache.cpp.i
+.PHONY : src/caching/cache.i
+
+# target to preprocess a source file
+src/caching/cache.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/caching/cache.cpp.i
+.PHONY : src/caching/cache.cpp.i
+
+src/caching/cache.s: src/caching/cache.cpp.s
+.PHONY : src/caching/cache.s
+
+# target to generate assembly for a file
+src/caching/cache.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/caching/cache.cpp.s
+.PHONY : src/caching/cache.cpp.s
+
 src/logging/logger.o: src/logging/logger.cpp.o
 .PHONY : src/logging/logger.o
 
@@ -297,6 +321,30 @@ src/proxy/thread-pool.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/proxy/thread-pool.cpp.s
 .PHONY : src/proxy/thread-pool.cpp.s
 
+src/rate-limiting/rate-limiter.o: src/rate-limiting/rate-limiter.cpp.o
+.PHONY : src/rate-limiting/rate-limiter.o
+
+# target to build an object file
+src/rate-limiting/rate-limiter.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/rate-limiting/rate-limiter.cpp.o
+.PHONY : src/rate-limiting/rate-limiter.cpp.o
+
+src/rate-limiting/rate-limiter.i: src/rate-limiting/rate-limiter.cpp.i
+.PHONY : src/rate-limiting/rate-limiter.i
+
+# target to preprocess a source file
+src/rate-limiting/rate-limiter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/rate-limiting/rate-limiter.cpp.i
+.PHONY : src/rate-limiting/rate-limiter.cpp.i
+
+src/rate-limiting/rate-limiter.s: src/rate-limiting/rate-limiter.cpp.s
+.PHONY : src/rate-limiting/rate-limiter.s
+
+# target to generate assembly for a file
+src/rate-limiting/rate-limiter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy.dir/build.make CMakeFiles/proxy.dir/src/rate-limiting/rate-limiter.cpp.s
+.PHONY : src/rate-limiting/rate-limiter.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -306,6 +354,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... proxy"
+	@echo "... src/caching/cache.o"
+	@echo "... src/caching/cache.i"
+	@echo "... src/caching/cache.s"
 	@echo "... src/logging/logger.o"
 	@echo "... src/logging/logger.i"
 	@echo "... src/logging/logger.s"
@@ -327,6 +378,9 @@ help:
 	@echo "... src/proxy/thread-pool.o"
 	@echo "... src/proxy/thread-pool.i"
 	@echo "... src/proxy/thread-pool.s"
+	@echo "... src/rate-limiting/rate-limiter.o"
+	@echo "... src/rate-limiting/rate-limiter.i"
+	@echo "... src/rate-limiting/rate-limiter.s"
 .PHONY : help
 
 

@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/opt/homebrew/opt/libpq/include
+CXX_INCLUDES = -I/Users/sebihaferd/Projects/api-proxy/include -I/opt/homebrew/opt/libpq/include -isystem /opt/homebrew/Cellar/openssl@3/3.6.3/include
 
 CXX_FLAGSarm64 = -std=gnu++20 -arch arm64
 
