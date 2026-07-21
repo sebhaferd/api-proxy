@@ -1,6 +1,8 @@
 #pragma once
 #include "router.hpp"
 #include "sql-logger.hpp"
+#include "http-request.hpp"
+#include "rate-limiter.hpp"
 #include "cache.hpp"
 #include <openssl/ssl.h>
 
@@ -26,7 +28,7 @@ private:
 
     bool setup_forward_ssl();
     void accept_loop();
-    void handle_client(int cliend_fd);
+    void handle_client(int cliend_fd,  const std::string& client_ip);
     std::string forward_to_server(const RouteTarget& target, 
         const std::string& forward_path,
         HttpRequest& req);
@@ -34,6 +36,6 @@ private:
     SqlLogger logger;
     ResponseCache cache;
     RateLimiter limiter;
-    void return_recent_logs(int client_fd);
-    void error404(int client_fd);
+    void return_recent_logs(SSL* client_ssl);
+    void error404(SSL* client_ssl);
 };

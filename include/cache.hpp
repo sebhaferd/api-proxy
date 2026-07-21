@@ -18,7 +18,6 @@ struct CacheEntry{
 
 class ResponseCache{
 private:
-    explicit ResponseCache(std::size_t capacity);
     std::unordered_map<std::string, CacheEntry> entries;
     std::mutex cache_mutex;
     std::list<std::string> lru_order; // (mru) front -> back (lru)
@@ -28,6 +27,8 @@ private:
     
 
 public:
+    explicit ResponseCache(int capacity);
+
     bool get(const std::string& key, std::string& response);
     void put(const std::string& key, 
             const std::string& response,

@@ -11,7 +11,8 @@
 #include <openssl/err.h>
 #include <openssl/ssl.h>
 
-
+#include "../../include/rate-limiter.hpp"
+#include "../../include/sql-logger.hpp"
 #include "../../include/server.hpp"
 #include "../../include/http-request.hpp"
 #include "../../include/router.hpp"
@@ -19,9 +20,9 @@
 
 
 Server::Server(int port)
-    : port(port), server_fd(-1), logger() {}, 
-    ResponseCache(100), ssl_context(nullptr), 
-    forward_context(nullptr), RateLimiter(10, 2)
+    : port(port), server_fd(-1), logger(), 
+    cache(100), ssl_context(nullptr), 
+    forward_context(nullptr), limiter(10, 2)
     {
     }
 
@@ -80,8 +81,8 @@ bool Server::setup_tls(
     ssl_context = SSL_CTX_new(TLS_server_method());
 
     //import certificate and private key to ssl ctx from input files
-    SSL_CTX_use_certificate_file(ssl_context, certificate_path, SSL_FILETYPE_PEM);
-    SSL_CTX_use_PrivateKey_file(ssl_context, private_key_path, SSL_FILETYPE_PEM);
+    SSL_CTX_use_certificate_file(ssl_context, certificate_path.c_str(), SSL_FILETYPE_PEM);
+    SSL_CTX_use_PrivateKey_file(ssl_context, private_key_path.c_str(),SSL_FILETYPE_PEM);
 
     //ensure tls is configured correctly with version, certificate and private key
     if (ssl_context == nullptr){
@@ -197,7 +198,7 @@ std::string Server::forward_to_server(const RouteTarget& target,
     //generate ssl object to encrypt upstream requests
     SSL *forward_ssl = SSL_new(forward_context);
     if (forward_ssl == nullptr){
-        std::cerr<<"failed to create forwarding ssl connection"
+        std::cerr<<"failed to create forwarding ssl connection"<<std::endl;
         ERR_print_errors_fp(stderr);
         close(forward_fd);
         return "";
@@ -205,7 +206,7 @@ std::string Server::forward_to_server(const RouteTarget& target,
 
     //attatch forward socket to ssl
     if (SSL_set_fd(forward_ssl, forward_fd) != 1){
-        std::cerr<<"failed to attatch foward socket to ssl";
+        std::cerr<<"failed to attatch foward socket to ssl"<<std::endl;
         ERR_print_errors_fp(stderr);
         SSL_free(forward_ssl);
         close(forward_fd);
@@ -282,7 +283,6 @@ void Server::return_recent_logs(SSL* client_ssl){
         "Content-length: " + std::to_string(body.size()) + "\r\n"
         + "\r\n" + body;
     ssl_send(client_ssl, response.c_str());
-    close(client_fd);
     return;
 }
 
@@ -296,7 +296,6 @@ void Server::error404(SSL* client_ssl){
         + body;
     
     ssl_send(client_ssl, not_found.c_str());
-    close(client_fd);
 }
 
 
@@ -364,14 +363,14 @@ void Server::handle_client(int client_fd, const std::string& client_ip){
         int ssl_error = SSL_get_error(client_ssl, bytes_read);
         std::cerr<< "recv failed";
         SSL_free(client_ssl);
-        close(client_fd)
+        close(client_fd);
         return;
     }
     if (bytes_read == 0){
         std::cerr<< "Client closed connection";
         int ssl_error = SSL_get_error(client_ssl, bytes_read);
         SSL_free(client_ssl);
-        close(client_fd)
+        close(client_fd);
         return;
     }
 
@@ -503,7 +502,7 @@ void Server::accept_loop(){
         //handle client request with client socket
         //enq request to task queue for worker threads to handle client
         //lambda expression to pass server and client socket fd
-        pool.enqueue([this, client_fd](){
+        pool.enqueue([this, client_fd, client_ip](){
             handle_client(client_fd, client_ip);
         });
     }

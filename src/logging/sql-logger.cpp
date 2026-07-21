@@ -48,7 +48,7 @@ void SqlLogger::log_request(
         std::string latency = std::to_string(latency_us);
         std::string size = std::to_string(response_size);
         std::string headers = (headers_injected ? "true" : "false");
-        std::string cache_hit = (cache ? "HIT" : "MISS")
+        std::string cache_hit = (cache ? "HIT" : "MISS");
 
         //create string array for input values to query
         const char* values[9] = {
